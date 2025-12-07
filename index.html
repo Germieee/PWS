@@ -2,11 +2,11 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Nguyen Duc Manh – Portfolio</title>
+  <title>Nguyễn Đức Mạnh – Mechanical Designer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Icons -->
+  <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/a2c2e6e5f0.js" crossorigin="anonymous"></script>
 
   <style>
@@ -41,7 +41,6 @@
       text-decoration: none;
     }
 
-    /* ============== LAYOUT ============== */
     .container {
       max-width: 1080px;
       margin: 0 auto;
@@ -57,4 +56,562 @@
 
     .logo {
       font-weight: 700;
-      letter-sp
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      max-width: 520px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 13px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.18s ease;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      border-color: transparent;
+      color: #0b1220;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 55%),
+                  radial-gradient(circle at bottom, rgba(129, 140, 248, 0.25), transparent 55%),
+                  var(--card);
+      padding: 20px 18px 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+      overflow: hidden;
+    }
+
+    .avatar-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      border: 2px solid rgba(248, 250, 252, 0.2);
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .avatar-name {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .avatar-role {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .avatar-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .pill {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .hero-card-footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      margin-top: 14px;
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+
+    .hero-card-footer span {
+      color: var(--muted);
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .socials a {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 13px;
+    }
+
+    .socials a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      margin-top: 32px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.18);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.7);
+      font-size: 13px;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .card small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .card ul {
+      margin-top: 8px;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 11px;
+    }
+
+    .chip {
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 4px 9px;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      color: #bae6fd;
+    }
+
+    .timeline {
+      border-left: 1px dashed rgba(75, 85, 99, 0.8);
+      padding-left: 16px;
+      margin-top: 6px;
+    }
+
+    .timeline-item {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 6px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -17px;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+
+    .timeline-item span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .contact-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-list {
+      font-size: 13px;
+    }
+
+    .contact-list p {
+      margin-bottom: 6px;
+    }
+
+    .contact-list i {
+      width: 18px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-card {
+        order: -1;
+      }
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="logo">NGUYỄN ĐỨC MẠNH</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">Mechanical Designer & Technician</p>
+        <h1 class="hero-title">
+          Kết hợp <span>Mechanical Design</span> &amp; <span>Automotive</span>
+          cho các sản phẩm thực tế.
+        </h1>
+        <p class="hero-sub">
+          Sinh viên Cơ khí – Ô tô tại HCMUT, có kinh nghiệm thực tế về bảo hành sửa chữa,
+          thiết kế CAD 2D/3D và hỗ trợ thiết kế xe chuyên dùng & trang trại chăn nuôi. Hiện đang
+          học embedded & tiếng Đức để mở rộng góc nhìn đa ngành.:contentReference[oaicite:1]{index=1}
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">CAD: AutoCAD, Inventor, Fusion 360</span>
+          <span class="tag">Mechanical Design</span>
+          <span class="tag">Warranty & Technician</span>
+          <span class="tag">Project Management basics</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#experience" class="btn btn-primary">
+            <i class="fa-solid fa-rocket"></i> Xem kinh nghiệm
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <i class="fa-regular fa-envelope"></i> Kết nối với tôi
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="avatar-circle">
+          NDM
+        </div>
+        <div class="avatar-name">Nguyễn Đức Mạnh</div>
+        <div class="avatar-role">Mechanical – Automotive Engineering Student · HCMUT</div>
+
+        <div class="avatar-meta">
+          <span class="pill">Mechanical Designer</span>
+          <span class="pill">Technician & Warranty</span>
+          <span class="pill">Business Support & Farm Design</span>
+        </div>
+
+        <div class="hero-card-footer">
+          <span>Open to Mechanical / Automotive internships</span>
+          <div class="socials">
+            <a href="https://github.com/Germieee" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/christian-nguyen899" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:23nd.manh@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & SKILLS -->
+    <section id="about">
+      <div class="section-title"><span></span>About</div>
+      <div class="section-grid">
+        <div class="card">
+          <h3>Giới thiệu</h3>
+          <p style="color:var(--muted);margin-top:6px;">
+            Mình là sinh viên ngành Automotive Engineering tại HCMC University of Technology (từ 2021),
+            định hướng trở thành Mechanical Designer với nền tảng CAD vững, hiểu quy trình sản xuất và
+            trải nghiệm thực tế về bảo hành, sửa chữa thiết bị điện tử & ô tô.:contentReference[oaicite:2]{index=2}
+          </p>
+        </div>
+
+        <section id="skills" class="card">
+          <h3>Kỹ năng nổi bật</h3>
+          <ul>
+            <li>Computer-Aided Design (CAD): 2D/3D modeling cho chi tiết & cụm.</li>
+            <li>Mechanical Design & Manufacturing Process Management.</li>
+            <li>Project Management, Problem-solving, Strategic & Critical Thinking.</li>
+            <li>Teamwork, giao tiếp với nhiều bộ phận (sales, kỹ thuật, khách hàng).</li>
+            <li>Cơ bản Word, Excel phục vụ báo cáo và quản lý dữ liệu.</li>
+          </ul>
+        </section>
+
+        <div class="card">
+          <h3>Ngôn ngữ & điểm mạnh học thuật</h3>
+          <ul>
+            <li>Tiếng Việt – Native.</li>
+            <li>Tiếng Anh – IELTS 6.0 (đọc hiểu tài liệu kỹ thuật tốt).</li>
+            <li>Tiếng Đức – A1 (đang học tiếp).</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Kinematics & Dynamics of Machines 7.3</span>
+            <span class="chip">Mechanical Engineering 8.1</span>
+            <span class="chip">Mechanical Components 7.3</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-title"><span></span>Experience</div>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Business Support &amp; Farm Design – Part-time Intern</strong><br>
+            <span>BIG DUTCHMAN VIETNAM · 2024 – 2025</span>
+            <p style="color:var(--muted);margin-top:4px;">
+              Thiết kế & chỉnh sửa bản vẽ 2D/3D bằng AutoCAD; đảm bảo bản vẽ đúng báo giá;
+              phối hợp team sales & kỹ thuật để phát triển layout trang trại và trang thiết bị
+              đúng nhu cầu khách hàng.:contentReference[oaicite:3]{index=3}
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Special Purpose Vehicle Design Intern – Full-time</strong><br>
+            <span>SAMCO · June – August 2023</span>
+            <p style="color:var(--muted);margin-top:4px;">
+              Hỗ trợ thiết kế xe chuyên dùng (ambulance, garbage truck, …), dựng & chỉnh sửa bản vẽ
+              2D/3D bằng AutoCAD/Inventor, bố trí thiết bị & nội thất trên chassis, phối hợp kỹ sư
+              senior để đảm bảo tính khả thi và tuân thủ tiêu chuẩn.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Technician &amp; Warranty Staff – Full-time</strong><br>
+            <span>BRAVIGO · May – July 2023</span>
+            <p style="color:var(--muted);margin-top:4px;">
+              Xử lý bảo hành màn hình Android ô tô, hỗ trợ khách hàng đa kênh, chẩn đoán lỗi,
+              tư vấn thông số & cách khắc phục, theo dõi quá trình giải quyết và phối hợp phòng ban liên quan.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <strong>Technician &amp; Warranty Staff – Part-time</strong><br>
+            <span>MIHANOI · Jan – April 2023</span>
+            <p style="color:var(--muted);margin-top:4px;">
+              Quản lý luồng hàng bảo hành giữa cửa hàng & kho kỹ thuật, kiểm tra – sửa chữa – cài đặt
+              phần mềm điều khiển cho thiết bị Xiaomi trước khi giao.:contentReference[oaicite:4]{index=4}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERT -->
+    <section>
+      <div class="section-title"><span></span>Education & Certifications</div>
+      <div class="section-grid">
+        <div class="card">
+          <h3>Automotive Engineering – HCMC University of Technology</h3>
+          <small>2021 – nay</small>
+          <ul>
+            <li>Tập trung vào cơ học máy, chi tiết máy, thực tập cơ khí & động lực ô tô.</li>
+            <li>Song song học thêm CAD/CAE và các khóa online về thiết kế & mô phỏng.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Selected Certifications</h3>
+          <ul>
+            <li>Autodesk Inventor Workshop Series 2024 – HCMUT.</li>
+            <li>Autodesk Certified Professional: Inventor for Mechanical Design (prep).</li>
+            <li>Intro to Mechanical Design & Manufacturing with Fusion 360.</li>
+            <li>CFD Simulation: Centrifugal Pump, Airflow Around a Spoiler.</li>
+            <li>Google – Foundations of Project Management, Data Analytics basics.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTEER -->
+    <section>
+      <div class="section-title"><span></span>Volunteer & Community</div>
+      <div class="card">
+        <ul>
+          <li>Volunteer – <strong>100 Days Flying – OISP Volunteer Club (2021–2022)</strong>: xây nhà sinh học, phát quà cho học sinh vùng khó khăn.</li>
+          <li>Volunteer – <strong>Saigon Care (2023–nay)</strong>: hỗ trợ người vô gia cư, các tổ chức bảo vệ trẻ em.</li>
+          <li>Singer – <strong>20somthings – Bee Volunteer Club (2025)</strong>: biểu diễn gây quỹ cho trường vùng cao Đắk Lắk.</li>
+          <li>HR/Risk management – <strong>Giai Điệu Trẻ Club (2023–nay)</strong>: tham gia tổ chức sự kiện, hỗ trợ phát triển vocal band.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title"><span></span>Contact</div>
+      <div class="card contact-card">
+        <div class="contact-meta">
+          Mình luôn cởi mở với:
+          <ul style="margin-top:6px;padding-left:18px;">
+            <li>Thực tập / part-time liên quan Mechanical Design, CAD, Automotive.</li>
+            <li>Cơ hội về Farm Design, đặc biệt với Big Dutchman & ngành nông nghiệp công nghệ cao.</li>
+            <li>Trao đổi về hành trình du học, phát triển sự nghiệp kỹ sư đa ngành.</li>
+          </ul>
+        </div>
+        <div class="contact-list">
+          <p><i class="fa-regular fa-envelope"></i> 23nd.manh@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i> +84 878 768 988</p>
+          <p><i class="fa-brands fa-linkedin"></i> linkedin.com/in/christian-nguyen899</p>
+          <p><i class="fa-brands fa-github"></i> github.com/Germieee</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Nguyễn Đức Mạnh · Built with GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
