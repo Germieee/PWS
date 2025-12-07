@@ -55,6 +55,7 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 32px;
+      gap: 12px;
     }
 
     .logo {
@@ -63,6 +64,12 @@
       text-transform: uppercase;
       font-size: 13px;
       color: var(--muted);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
 
     nav {
@@ -93,6 +100,31 @@
 
     nav a:hover::after {
       width: 100%;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .lang-btn {
+      padding: 4px 10px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: #020617;
+      font-weight: 600;
     }
 
     /* HERO */
@@ -284,7 +316,7 @@
       gap: 8px;
     }
 
-    .section-title span {
+    .section-title span.dot {
       width: 8px;
       height: 8px;
       border-radius: 999px;
@@ -404,11 +436,27 @@
       opacity: 0.8;
     }
 
+    /* Language visibility */
+    .lang {
+      display: none;
+    }
+
+    body.lang-vi .lang-vi {
+      display: inline;
+    }
+
+    body.lang-en .lang-en {
+      display: inline;
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+      }
+      .header-right {
+        width: 100%;
+        justify-content: space-between;
       }
       .hero {
         grid-template-columns: minmax(0, 1fr);
@@ -429,32 +477,67 @@
     }
   </style>
 </head>
-<body>
+<body class="lang-vi">
   <div class="container">
     <!-- HEADER -->
     <header>
       <div class="logo">NGUYỄN ĐỨC MẠNH</div>
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-right">
+        <nav aria-label="Main navigation">
+          <a href="#about">
+            <span class="lang lang-vi">Giới thiệu</span>
+            <span class="lang lang-en">About</span>
+          </a>
+          <a href="#skills">
+            <span class="lang lang-vi">Kỹ năng</span>
+            <span class="lang lang-en">Skills</span>
+          </a>
+          <a href="#experience">
+            <span class="lang lang-vi">Kinh nghiệm</span>
+            <span class="lang lang-en">Experience</span>
+          </a>
+          <a href="#contact">
+            <span class="lang lang-vi">Liên hệ</span>
+            <span class="lang lang-en">Contact</span>
+          </a>
+        </nav>
+        <div class="lang-switch" aria-label="Language switch">
+          <button id="btn-vi" class="lang-btn active" type="button">VI</button>
+          <button id="btn-en" class="lang-btn" type="button">EN</button>
+        </div>
+      </div>
     </header>
 
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div>
-        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">Mechanical Designer &amp; Technician</p>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">
+          <span class="lang lang-vi">Mechanical Designer &amp; Technician</span>
+          <span class="lang lang-en">Mechanical Designer &amp; Technician</span>
+        </p>
         <h1 id="hero-title" class="hero-title">
-          Kết hợp <span>Mechanical Design</span> &amp; <span>Automotive</span>
-          cho các sản phẩm thực tế.
+          <span class="lang lang-vi">
+            Kết hợp <span>Mechanical Design</span> &amp; <span>Automotive</span>
+            cho các sản phẩm thực tế.
+          </span>
+          <span class="lang lang-en">
+            Blending <span>Mechanical Design</span> &amp; <span>Automotive</span>
+            for real-world products.
+          </span>
         </h1>
         <p class="hero-sub">
-          Sinh viên Cơ khí – Ô tô tại HCMUT, có kinh nghiệm thực tế về bảo hành sửa chữa,
-          thiết kế CAD 2D/3D và tham gia dự án MarsRover 6x6 tại Bosch Automotive Lab.
-          Hiện đang học embedded &amp; tiếng Đức để mở rộng góc nhìn đa ngành và hướng tới
-          trở thành kỹ sư có thể làm việc quốc tế.
+          <span class="lang lang-vi">
+            Sinh viên Cơ khí – Ô tô tại HCMUT, có kinh nghiệm thực tế về bảo hành sửa chữa,
+            thiết kế CAD 2D/3D và tham gia dự án MarsRover 6x6 tại Bosch Automotive Lab.
+            Hiện đang học embedded &amp; tiếng Đức để mở rộng góc nhìn đa ngành và hướng tới
+            trở thành kỹ sư có thể làm việc quốc tế.
+          </span>
+          <span class="lang lang-en">
+            Automotive Engineering student at HCMUT with hands-on experience in warranty &amp; repair,
+            2D/3D CAD design, and the MarsRover 6x6 project at Bosch Automotive Lab.
+            Currently learning embedded systems &amp; German to build a cross-disciplinary profile
+            and become an engineer who can work globally.
+          </span>
         </p>
 
         <div class="hero-tags">
@@ -467,10 +550,14 @@
 
         <div class="hero-actions">
           <a href="#experience" class="btn btn-primary">
-            <i class="fa-solid fa-rocket"></i> Xem kinh nghiệm
+            <i class="fa-solid fa-rocket"></i>
+            <span class="lang lang-vi">Xem kinh nghiệm</span>
+            <span class="lang lang-en">View experience</span>
           </a>
           <a href="#contact" class="btn btn-ghost">
-            <i class="fa-regular fa-envelope"></i> Kết nối với tôi
+            <i class="fa-regular fa-envelope"></i>
+            <span class="lang lang-vi">Kết nối với tôi</span>
+            <span class="lang lang-en">Get in touch</span>
           </a>
         </div>
       </div>
@@ -480,7 +567,10 @@
           NDM
         </div>
         <div class="avatar-name">Nguyễn Đức Mạnh</div>
-        <div class="avatar-role">Mechanical – Automotive Engineering Student · HCMUT</div>
+        <div class="avatar-role">
+          <span class="lang lang-vi">Mechanical – Automotive Engineering Student · HCMUT</span>
+          <span class="lang lang-en">Mechanical – Automotive Engineering Student · HCMUT</span>
+        </div>
 
         <div class="avatar-meta">
           <span class="pill">Mechanical Designer</span>
@@ -489,7 +579,10 @@
         </div>
 
         <div class="hero-card-footer">
-          <span>Open to Mechanical / Automotive internships</span>
+          <span>
+            <span class="lang lang-vi">Sẵn sàng cho cơ hội thực tập / part-time Mechanical / Automotive</span>
+            <span class="lang lang-en">Open to Mechanical / Automotive internship &amp; part-time roles</span>
+          </span>
           <div class="socials" aria-label="Social links">
             <a href="https://github.com/Germieee" title="GitHub" target="_blank" rel="noreferrer">
               <i class="fa-brands fa-github"></i>
@@ -507,26 +600,83 @@
 
     <!-- ABOUT & SKILLS -->
     <section id="about">
-      <div class="section-title"><span></span>About</div>
+      <div class="section-title">
+        <span class="dot"></span>
+        <span class="lang lang-vi">Giới thiệu</span>
+        <span class="lang lang-en">About</span>
+      </div>
       <div class="section-grid">
         <div class="card">
-          <h3>Giới thiệu</h3>
+          <h3>
+            <span class="lang lang-vi">Giới thiệu</span>
+            <span class="lang lang-en">Summary</span>
+          </h3>
           <p style="color:var(--muted);margin-top:6px;">
-            Mình là sinh viên ngành Automotive Engineering tại HCMC University of Technology (từ 2021),
-            định hướng trở thành Mechanical Designer với nền tảng CAD vững, hiểu quy trình sản xuất,
-            đã từng làm việc tại môi trường phòng lab (Bosch Automotive Lab) và doanh nghiệp (Samco,
-            Big Dutchman, Bravigo, MIHanoi) trong vai trò thiết kế và kỹ thuật bảo hành.
+            <span class="lang lang-vi">
+              Mình là sinh viên ngành Automotive Engineering tại HCMC University of Technology (từ 2021),
+              định hướng trở thành Mechanical Designer với nền tảng CAD vững, hiểu quy trình sản xuất.
+              Mình đã có trải nghiệm ở môi trường phòng lab (Bosch Automotive Lab) và doanh nghiệp
+              (Samco, Big Dutchman, Bravigo, MIHanoi) trong vai trò thiết kế cơ khí, farm design
+              và kỹ thuật bảo hành. Mình thích cách tư duy hệ thống, tối ưu quy trình và tìm giải pháp
+              giao thoa giữa cơ khí – phần mềm – mô phỏng.
+            </span>
+            <span class="lang lang-en">
+              I am an Automotive Engineering student at HCMC University of Technology (since 2021),
+              aiming to become a Mechanical Designer with strong CAD skills and solid understanding of
+              manufacturing processes. I have worked in both lab environments (Bosch Automotive Lab) and
+              industry (Samco, Big Dutchman, Bravigo, MIHanoi) in roles related to mechanical design,
+              farm design and technical warranty. I enjoy systems thinking, process optimization and
+              solving cross-disciplinary problems at the intersection of mechanics, software and simulation.
+            </span>
           </p>
         </div>
 
         <section id="skills" class="card" aria-label="Skills">
-          <h3>Kỹ năng nổi bật</h3>
+          <h3>
+            <span class="lang lang-vi">Kỹ năng nổi bật</span>
+            <span class="lang lang-en">Key Skills</span>
+          </h3>
           <ul>
-            <li>Computer-Aided Design (CAD): 2D/3D modeling cho chi tiết &amp; cụm.</li>
-            <li>Mechanical Design &amp; Manufacturing Process Management.</li>
-            <li>Project Management, Problem-solving, Strategic &amp; Critical Thinking.</li>
-            <li>Teamwork, giao tiếp với nhiều bộ phận (sales, kỹ thuật, khách hàng).</li>
-            <li>Cơ bản Word, Excel phục vụ báo cáo và quản lý dữ liệu.</li>
+            <li>
+              <span class="lang lang-vi">
+                Computer-Aided Design (CAD): 2D/3D modeling cho chi tiết &amp; cụm.
+              </span>
+              <span class="lang lang-en">
+                Computer-Aided Design (CAD): 2D/3D modeling for parts and assemblies.
+              </span>
+            </li>
+            <li>
+              <span class="lang lang-vi">
+                Mechanical Design &amp; quản lý quy trình sản xuất cơ bản.
+              </span>
+              <span class="lang lang-en">
+                Mechanical Design &amp; basic manufacturing process management.
+              </span>
+            </li>
+            <li>
+              <span class="lang lang-vi">
+                Project Management, Problem-solving, Strategic &amp; Critical Thinking.
+              </span>
+              <span class="lang lang-en">
+                Project Management, Problem-solving, Strategic &amp; Critical Thinking.
+              </span>
+            </li>
+            <li>
+              <span class="lang lang-vi">
+                Teamwork, giao tiếp với nhiều bộ phận (sales, kỹ thuật, khách hàng).
+              </span>
+              <span class="lang lang-en">
+                Teamwork and communication across teams (sales, engineering, customers).
+              </span>
+            </li>
+            <li>
+              <span class="lang lang-vi">
+                Sử dụng Word, Excel cơ bản phục vụ báo cáo và quản lý dữ liệu kỹ thuật.
+              </span>
+              <span class="lang lang-en">
+                Basic Word &amp; Excel for reporting and managing technical data.
+              </span>
+            </li>
           </ul>
 
           <h3 style="margin-top:12px;font-size:13px;">Mindset &amp; Thinking</h3>
@@ -548,22 +698,58 @@
         </section>
 
         <div class="card">
-          <h3>Ngôn ngữ &amp; Điểm mạnh học thuật</h3>
+          <h3>
+            <span class="lang lang-vi">Ngôn ngữ &amp; Điểm mạnh học thuật</span>
+            <span class="lang lang-en">Languages &amp; Academic Highlights</span>
+          </h3>
           <ul>
-            <li>Tiếng Việt – Native.</li>
-            <li>Tiếng Anh – IELTS 6.0 (đọc hiểu tài liệu kỹ thuật tốt).</li>
-            <li>Tiếng Đức – Goethe-Zertifikat A1, đang học tiếp lên A2/B1.</li>
+            <li>
+              <span class="lang lang-vi">Tiếng Việt – Native.</span>
+              <span class="lang lang-en">Vietnamese – Native.</span>
+            </li>
+            <li>
+              <span class="lang lang-vi">Tiếng Anh – IELTS 6.0 (đọc hiểu tài liệu kỹ thuật tốt).</span>
+              <span class="lang lang-en">English – IELTS 6.0 (good at reading technical documents).</span>
+            </li>
+            <li>
+              <span class="lang lang-vi">Tiếng Đức – Goethe-Zertifikat A1, đang học tiếp lên A2/B1.</span>
+              <span class="lang lang-en">German – Goethe-Zertifikat A1, currently progressing towards A2/B1.</span>
+            </li>
           </ul>
 
-          <h3 style="margin-top:12px;font-size:13px;">Học thuật &amp; Điểm số nổi bật</h3>
+          <h3 style="margin-top:12px;font-size:13px;">
+            <span class="lang lang-vi">Học thuật &amp; Điểm số nổi bật</span>
+            <span class="lang lang-en">Key Courses &amp; Grades</span>
+          </h3>
           <ul style="margin-top:6px;">
-            <li>Đồ án Thiết kế Ô tô – <strong>8.5/10</strong></li>
-            <li>Đồ án Chuyên ngành Ô tô – <strong>8.5/10</strong></li>
-            <li>Phương pháp Thiết kế Động cơ &amp; Ô tô – <strong>7.3/10</strong></li>
-            <li>Thí nghiệm Ô tô &amp; Động cơ đốt trong – <strong>7.8/10</strong></li>
-            <li>Thực hành Tự động hóa Thiết kế (CAD) – <strong>7.0/10</strong></li>
-            <li>Thực tập Kỹ thuật Ô tô – <strong>7.3/10</strong></li>
-            <li>Thực tập Ngoài trường (Ngành Ô tô) – <strong>7.0/10</strong></li>
+            <li>
+              <span class="lang lang-vi">Đồ án Thiết kế Ô tô – <strong>8.5/10</strong></span>
+              <span class="lang lang-en">Automotive Design Project – <strong>8.5/10</strong></span>
+            </li>
+            <li>
+              <span class="lang lang-vi">Đồ án Chuyên ngành Ô tô – <strong>8.5/10</strong></span>
+              <span class="lang lang-en">Specialized Automotive Project – <strong>8.5/10</strong></span>
+            </li>
+            <li>
+              <span class="lang lang-vi">Phương pháp Thiết kế Động cơ &amp; Ô tô – <strong>7.3/10</strong></span>
+              <span class="lang lang-en">Design Methods for Engines &amp; Vehicles – <strong>7.3/10</strong></span>
+            </li>
+            <li>
+              <span class="lang lang-vi">Thí nghiệm Ô tô &amp; Động cơ đốt trong – <strong>7.8/10</strong></span>
+              <span class="lang lang-en">Automotive &amp; IC Engine Laboratory – <strong>7.8/10</strong></span>
+            </li>
+            <li>
+              <span class="lang lang-vi">Thực hành Tự động hóa Thiết kế (CAD) – <strong>7.0/10</strong></span>
+              <span class="lang lang-en">Design Automation Practice (CAD) – <strong>7.0/10</strong></span>
+            </li>
+            <li>
+              <span class="lang lang-vi">Thực tập Kỹ thuật Ô tô – <strong>7.3/10</strong></span>
+              <span class="lang lang-en">Automotive Engineering Internship – <strong>7.3/10</strong></span>
+            </li>
+            <li>
+              <span class="lang lang-vi">Thực tập Ngoài trường (Ngành Ô tô) – <strong>7.0/10</strong></span>
+              <span class="lang lang-en">Off-campus Internship (Automotive) – <strong>7.0/10</strong></span>
+            </li>
           </ul>
 
           <div class="chip-row">
@@ -578,20 +764,65 @@
 
     <!-- EXPERIENCE -->
     <section id="experience">
-      <div class="section-title"><span></span>Experience</div>
+      <div class="section-title">
+        <span class="dot"></span>
+        <span class="lang lang-vi">Kinh nghiệm</span>
+        <span class="lang lang-en">Experience</span>
+      </div>
       <div class="card">
         <div class="timeline">
           <div class="timeline-item">
             <strong>Mechanical Designer – Bosch Automotive Lab (MarsRover Project)</strong><br>
             <span>Bosch · 2025 – nay</span>
             <p style="color:var(--muted);margin-top:4px;">
-              Tham gia dự án thiết kế mô hình xe MarsRover 6x6 trong nhóm cơ khí, tập trung vào:
+              <span class="lang lang-vi">
+                Tham gia dự án thiết kế mô hình xe MarsRover 6x6 trong nhóm cơ khí, tập trung vào:
+              </span>
+              <span class="lang lang-en">
+                Participated in the MarsRover 6x6 mechanical team, focusing on:
+              </span>
             </p>
             <ul>
-              <li>Thiết kế mô hình 3D cho chassis, hệ thống treo rocker–bogie, cụm tay đòn và khung đỡ bằng Inventor/Fusion 360.</li>
-              <li>Phối hợp với nhóm điều khiển để đảm bảo bố trí cơ khí phù hợp sensor, actuator và layout hệ thống truyền động.</li>
-              <li>Tham gia gia công, lắp ráp prototype, đề xuất giải pháp kết cấu để dễ chế tạo và bảo trì.</li>
-              <li>Kiểm soát dung sai thiết kế: lựa chọn kiểu lắp, dung sai ổ lăn – trục – gối đỡ, đảm bảo độ bền và khả năng tháo lắp.</li>
+              <li>
+                <span class="lang lang-vi">
+                  Thiết kế mô hình 3D cho chassis, hệ thống treo rocker–bogie, cụm tay đòn và khung đỡ
+                  bằng Inventor/Fusion 360.
+                </span>
+                <span class="lang lang-en">
+                  Creating 3D models for chassis, rocker–bogie suspension, link arms and support frames
+                  using Inventor/Fusion 360.
+                </span>
+              </li>
+              <li>
+                <span class="lang lang-vi">
+                  Phối hợp với nhóm điều khiển để đảm bảo bố trí cơ khí phù hợp với sensor, actuator
+                  và layout hệ thống truyền động.
+                </span>
+                <span class="lang lang-en">
+                  Collaborating with the control team to ensure mechanical layout fits sensors, actuators
+                  and drivetrain architecture.
+                </span>
+              </li>
+              <li>
+                <span class="lang lang-vi">
+                  Tham gia gia công, lắp ráp prototype; đề xuất giải pháp kết cấu giúp dễ chế tạo,
+                  dễ bảo trì và phù hợp điều kiện vận hành thực tế.
+                </span>
+                <span class="lang lang-en">
+                  Supporting manufacturing and assembly of prototypes; proposing structural solutions
+                  for easier fabrication, maintenance and real-world operation.
+                </span>
+              </li>
+              <li>
+                <span class="lang lang-vi">
+                  Kiểm soát dung sai thiết kế: lựa chọn kiểu lắp, dung sai ổ lăn – trục – gối đỡ,
+                  đảm bảo độ bền và khả năng tháo lắp.
+                </span>
+                <span class="lang lang-en">
+                  Managing design tolerances: selecting fits and tolerances for bearings, shafts
+                  and housings to ensure durability and serviceability.
+                </span>
+              </li>
             </ul>
           </div>
 
@@ -599,9 +830,16 @@
             <strong>Business Support &amp; Farm Design – Part-time Intern</strong><br>
             <span>BIG DUTCHMAN VIETNAM · 2024 – 2025</span>
             <p style="color:var(--muted);margin-top:4px;">
-              Thiết kế &amp; chỉnh sửa bản vẽ 2D/3D bằng AutoCAD; đảm bảo bản vẽ đúng báo giá;
-              phối hợp team sales &amp; kỹ thuật để phát triển layout trang trại và trang thiết bị
-              phù hợp nhu cầu khách hàng.
+              <span class="lang lang-vi">
+                Thiết kế &amp; chỉnh sửa bản vẽ 2D/3D bằng AutoCAD; đảm bảo bản vẽ đúng với cấu hình
+                và báo giá, phối hợp team sales &amp; kỹ thuật để phát triển layout trang trại và trang thiết
+                bị phù hợp nhu cầu khách hàng.
+              </span>
+              <span class="lang lang-en">
+                Designed and edited 2D/3D drawings in AutoCAD; ensured alignment between drawings,
+                configurations and quotations; collaborated with sales &amp; technical teams to develop
+                farm layouts and equipment setups that meet customer requirements.
+              </span>
             </p>
           </div>
 
@@ -609,9 +847,17 @@
             <strong>Special Purpose Vehicle Design Intern – Full-time</strong><br>
             <span>SAMCO · June – August 2023</span>
             <p style="color:var(--muted);margin-top:4px;">
-              Hỗ trợ thiết kế xe chuyên dùng (ambulance, garbage truck, ...), dựng &amp; chỉnh sửa bản vẽ
-              2D/3D bằng AutoCAD/Inventor, bố trí thiết bị &amp; nội thất trên chassis, phối hợp kỹ sư
-              senior để đảm bảo tính khả thi và tuân thủ tiêu chuẩn.
+              <span class="lang lang-vi">
+                Hỗ trợ thiết kế xe chuyên dùng (ambulance, garbage truck, ...), dựng &amp; chỉnh sửa
+                bản vẽ 2D/3D bằng AutoCAD/Inventor, bố trí thiết bị &amp; nội thất trên chassis, phối hợp
+                kỹ sư senior để đảm bảo tính khả thi kỹ thuật và tuân thủ tiêu chuẩn.
+              </span>
+              <span class="lang lang-en">
+                Assisted in designing special-purpose vehicles (ambulance, garbage truck, etc.),
+                created and revised 2D/3D drawings using AutoCAD/Inventor, arranged equipment and
+                interiors on chassis, and worked with senior engineers to ensure technical feasibility
+                and compliance with standards.
+              </span>
             </p>
           </div>
 
@@ -619,8 +865,15 @@
             <strong>Technician &amp; Warranty Staff – Full-time</strong><br>
             <span>BRAVIGO · May – July 2023</span>
             <p style="color:var(--muted);margin-top:4px;">
-              Xử lý bảo hành màn hình Android ô tô, hỗ trợ khách hàng đa kênh, chẩn đoán lỗi,
-              tư vấn thông số &amp; cách khắc phục, theo dõi quá trình giải quyết và phối hợp phòng ban liên quan.
+              <span class="lang lang-vi">
+                Xử lý bảo hành màn hình Android ô tô, hỗ trợ khách hàng đa kênh, chẩn đoán lỗi,
+                tư vấn thông số &amp; cách khắc phục, theo dõi tiến độ xử lý và phối hợp với các phòng ban liên quan.
+              </span>
+              <span class="lang lang-en">
+                Handled warranty cases for in-car Android screens, supported customers through multiple channels,
+                diagnosed issues, advised on specifications &amp; fixes, monitored progress and coordinated
+                with related departments.
+              </span>
             </p>
           </div>
 
@@ -628,8 +881,14 @@
             <strong>Technician &amp; Warranty Staff – Part-time</strong><br>
             <span>MIHANOI · Jan – April 2023</span>
             <p style="color:var(--muted);margin-top:4px;">
-              Quản lý luồng hàng bảo hành giữa cửa hàng &amp; kho kỹ thuật, kiểm tra – sửa chữa – cài đặt
-              phần mềm điều khiển cho thiết bị Xiaomi trước khi giao.
+              <span class="lang lang-vi">
+                Quản lý luồng hàng bảo hành giữa cửa hàng &amp; kho kỹ thuật, kiểm tra – sửa chữa – cài đặt
+                phần mềm điều khiển cho thiết bị Xiaomi trước khi giao, giúp tối ưu thời gian xử lý và giảm sai sót.
+              </span>
+              <span class="lang lang-en">
+                Managed warranty flow between store and technical warehouse, inspected – repaired – configured
+                control software for Xiaomi devices before delivery, helping optimize turnaround time and reduce errors.
+              </span>
             </p>
           </div>
         </div>
@@ -638,19 +897,43 @@
 
     <!-- EDUCATION & CERT -->
     <section>
-      <div class="section-title"><span></span>Education &amp; Certifications</div>
+      <div class="section-title">
+        <span class="dot"></span>
+        <span class="lang lang-vi">Học vấn &amp; Chứng chỉ</span>
+        <span class="lang lang-en">Education &amp; Certifications</span>
+      </div>
       <div class="section-grid">
         <div class="card">
-          <h3>Automotive Engineering – HCMC University of Technology</h3>
+          <h3>
+            <span class="lang lang-vi">Automotive Engineering – HCMC University of Technology</span>
+            <span class="lang lang-en">Automotive Engineering – HCMC University of Technology</span>
+          </h3>
           <small>2021 – nay</small>
           <ul>
-            <li>Tập trung vào cơ học máy, chi tiết máy, thực tập cơ khí &amp; hệ thống động lực ô tô.</li>
-            <li>Song song học thêm CAD/CAE, thiết kế &amp; mô phỏng trên Inventor, Fusion 360, Simulink.</li>
+            <li>
+              <span class="lang lang-vi">
+                Tập trung vào cơ học máy, chi tiết máy, thực tập cơ khí &amp; hệ thống động lực ô tô.
+              </span>
+              <span class="lang lang-en">
+                Focused on mechanics, machine elements, mechanical internship and automotive powertrain systems.
+              </span>
+            </li>
+            <li>
+              <span class="lang lang-vi">
+                Song song học thêm CAD/CAE, thiết kế &amp; mô phỏng trên Inventor, Fusion 360, Simulink.
+              </span>
+              <span class="lang lang-en">
+                In parallel, learning CAD/CAE and simulation using Inventor, Fusion 360 and Simulink.
+              </span>
+            </li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Selected Certifications</h3>
+          <h3>
+            <span class="lang lang-vi">Selected Certifications</span>
+            <span class="lang lang-en">Selected Certifications</span>
+          </h3>
           <ul>
             <li>Autodesk Inventor Workshop Series 2024 – HCMUT.</li>
             <li>Autodesk Certified Professional: Inventor for Mechanical Design (Exam Prep).</li>
@@ -666,27 +949,98 @@
 
     <!-- VOLUNTEER -->
     <section>
-      <div class="section-title"><span></span>Volunteer &amp; Community</div>
+      <div class="section-title">
+        <span class="dot"></span>
+        <span class="lang lang-vi">Hoạt động &amp; Cộng đồng</span>
+        <span class="lang lang-en">Volunteer &amp; Community</span>
+      </div>
       <div class="card">
         <ul>
-          <li>Volunteer – <strong>100 Days Flying – OISP Volunteer Club (2021–2022)</strong>: xây nhà sinh học, phát quà cho học sinh vùng khó khăn, tham gia hoạt động gây quỹ.</li>
-          <li>Volunteer – <strong>Saigon Care (2023–nay)</strong>: hỗ trợ người vô gia cư, tặng quà cho các tổ chức bảo vệ trẻ em mỗi tháng.</li>
-          <li>Singer – <strong>20somthings – Bee Volunteer Club (2025)</strong>: biểu diễn gây quỹ cho trường vùng cao Đắk Lắk.</li>
-          <li>HR/Risk management – <strong>Giai Điệu Trẻ Club (2023–nay)</strong>: tham gia tổ chức sự kiện, hỗ trợ phát triển vocal band.</li>
+          <li>
+            <span class="lang lang-vi">
+              Volunteer – <strong>100 Days Flying – OISP Volunteer Club (2021–2022)</strong>:
+              xây nhà sinh học, phát quà cho học sinh vùng khó khăn, tham gia hoạt động gây quỹ.
+            </span>
+            <span class="lang lang-en">
+              Volunteer – <strong>100 Days Flying – OISP Volunteer Club (2021–2022)</strong>:
+              helped build bio-houses, delivered gifts to students in remote areas and joined fundraising events.
+            </span>
+          </li>
+          <li>
+            <span class="lang lang-vi">
+              Volunteer – <strong>Saigon Care (2023–nay)</strong>: hỗ trợ người vô gia cư, tặng quà
+              cho các tổ chức bảo vệ trẻ em mỗi tháng.
+            </span>
+            <span class="lang lang-en">
+              Volunteer – <strong>Saigon Care (2023–present)</strong>: supporting homeless people
+              and donating gifts monthly to child protection organizations.
+            </span>
+          </li>
+          <li>
+            <span class="lang lang-vi">
+              Singer – <strong>20somthings – Bee Volunteer Club (2025)</strong>: biểu diễn gây quỹ
+              cho trường vùng cao Đắk Lắk.
+            </span>
+            <span class="lang lang-en">
+              Singer – <strong>20somthings – Bee Volunteer Club (2025)</strong>: performing to
+              raise funds for a school in Đắk Lắk highlands.
+            </span>
+          </li>
+          <li>
+            <span class="lang lang-vi">
+              HR/Risk management – <strong>Giai Điệu Trẻ Club (2023–nay)</strong>: tham gia tổ chức
+              sự kiện, hỗ trợ phát triển vocal band và quản lý rủi ro trong hoạt động câu lạc bộ.
+            </span>
+            <span class="lang lang-en">
+              HR/Risk management – <strong>Giai Điệu Trẻ Club (2023–present)</strong>:
+              involved in event organization, supporting vocal band development and managing
+              risks in club activities.
+            </span>
+          </li>
         </ul>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-      <div class="section-title"><span></span>Contact</div>
+      <div class="section-title">
+        <span class="dot"></span>
+        <span class="lang lang-vi">Liên hệ</span>
+        <span class="lang lang-en">Contact</span>
+      </div>
       <div class="card contact-card">
         <div class="contact-meta">
-          Mình luôn cởi mở với:
+          <span class="lang lang-vi">
+            Mình luôn cởi mở với:
+          </span>
+          <span class="lang lang-en">
+            I am open to:
+          </span>
           <ul style="margin-top:6px;padding-left:18px;">
-            <li>Thực tập / part-time liên quan Mechanical Design, CAD, Automotive.</li>
-            <li>Cơ hội về Farm Design, đặc biệt với ngành nông nghiệp công nghệ cao.</li>
-            <li>Trao đổi về hành trình du học, phát triển sự nghiệp kỹ sư đa ngành.</li>
+            <li>
+              <span class="lang lang-vi">
+                Thực tập / part-time liên quan Mechanical Design, CAD, Automotive.
+              </span>
+              <span class="lang lang-en">
+                Internships / part-time roles in Mechanical Design, CAD, Automotive Engineering.
+              </span>
+            </li>
+            <li>
+              <span class="lang lang-vi">
+                Cơ hội về Farm Design, đặc biệt trong lĩnh vực nông nghiệp công nghệ cao.
+              </span>
+              <span class="lang lang-en">
+                Opportunities in Farm Design, especially in high-tech agriculture.
+              </span>
+            </li>
+            <li>
+              <span class="lang lang-vi">
+                Trao đổi về hành trình du học, phát triển sự nghiệp kỹ sư đa ngành.
+              </span>
+              <span class="lang lang-en">
+                Conversations about studying abroad and building a cross-disciplinary engineering career path.
+              </span>
+            </li>
           </ul>
         </div>
         <div class="contact-list">
@@ -720,7 +1074,29 @@
   </div>
 
   <script>
+    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Language toggle
+    const btnVi = document.getElementById("btn-vi");
+    const btnEn = document.getElementById("btn-en");
+
+    function setLang(lang) {
+      document.body.classList.remove("lang-vi", "lang-en");
+      document.body.classList.add(lang === "en" ? "lang-en" : "lang-vi");
+      document.documentElement.lang = lang === "en" ? "en" : "vi";
+
+      if (lang === "en") {
+        btnEn.classList.add("active");
+        btnVi.classList.remove("active");
+      } else {
+        btnVi.classList.add("active");
+        btnEn.classList.remove("active");
+      }
+    }
+
+    btnVi.addEventListener("click", () => setLang("vi"));
+    btnEn.addEventListener("click", () => setLang("en"));
   </script>
 </body>
 </html>
