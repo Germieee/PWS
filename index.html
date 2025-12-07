@@ -4,307 +4,170 @@
   <meta charset="UTF-8" />
   <title>Nguyễn Đức Mạnh – Mechanical & Automotive Designer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Nguyễn Đức Mạnh – sinh viên Mechanical & Automotive Engineering (HCMUT) với kinh nghiệm CAD 2D/3D, thiết kế xe chuyên dùng, dự án MarsRover 6x6 tại Bosch Automotive Lab và Farm Design tại Big Dutchman." />
-  <meta name="keywords" content="Nguyen Duc Manh, Mechanical Designer, Automotive Engineering, CAD, Inventor, Fusion 360, HCMUT" />
+  <meta name="description" content="Portfolio của Nguyễn Đức Mạnh – Mechanical & Automotive Engineering student tại HCMUT với kinh nghiệm CAD, thiết kế máy, MarsRover tại Bosch Lab." />
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/a2c2e6e5f0.js" crossorigin="anonymous"></script>
 
   <style>
     :root {
       --bg: #050816;
-      --bg-soft: #0f172a;
       --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.08);
       --text: #e5e7eb;
       --muted: #9ca3af;
-      --card: #020617;
+      --card: #0f172a;
       --border: #1f2937;
-      --radius-lg: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Poppins", sans-serif;
-      background: radial-gradient(circle at top, #1f2933 0, #020617 55%);
+      background: radial-gradient(circle at top, #1f2937 0%, #020617 55%);
       color: var(--text);
-      min-height: 100vh;
       line-height: 1.6;
+      min-height: 100vh;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { text-decoration: none; color: inherit; }
 
     .container {
-      max-width: 1080px;
-      margin: 0 auto;
+      max-width: 1100px;
+      margin: auto;
       padding: 24px 16px 80px;
     }
 
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 32px;
-      gap: 12px;
     }
 
     .logo {
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
       font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
       color: var(--muted);
+      text-transform: uppercase;
     }
 
-    nav a {
-      position: relative;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width 0.18s ease;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
+    nav { display: flex; gap: 18px; }
+    nav a { font-size: 14px; color: var(--muted); position: relative; }
+    nav a:hover { color: var(--accent); }
 
     .lang-switch {
       display: inline-flex;
-      border-radius: 999px;
       border: 1px solid var(--border);
+      border-radius: 999px;
       overflow: hidden;
-      font-size: 11px;
-      background: rgba(15, 23, 42, 0.8);
     }
-
     .lang-btn {
-      padding: 4px 10px;
-      cursor: pointer;
-      border: none;
+      padding: 4px 12px;
       background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 11px;
       color: var(--muted);
-      transition: all 0.15s ease;
-      font-family: inherit;
     }
-
     .lang-btn.active {
       background: var(--accent);
       color: #020617;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      grid-template-columns: 3fr 2fr;
       gap: 32px;
-      align-items: center;
       margin-bottom: 40px;
     }
 
-    .hero-title {
-      font-size: clamp(28px, 4vw, 38px);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+    .hero-title { font-size: 38px; font-weight: 700; }
+    .hero-title span { color: var(--accent); }
 
-    .hero-title span {
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 15px;
-      color: var(--muted);
-      margin-bottom: 20px;
-      max-width: 520px;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
+    .hero-sub { font-size: 15px; color: var(--muted); max-width: 520px; }
 
     .tag {
       padding: 5px 12px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.3);
       font-size: 11px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
       color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      margin-right: 6px;
     }
 
     .btn {
-      border-radius: 999px;
-      padding: 9px 18px;
-      font-size: 13px;
-      border: 1px solid transparent;
-      cursor: pointer;
       display: inline-flex;
+      padding: 9px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      margin-right: 10px;
       align-items: center;
       gap: 8px;
-      transition: all 0.18s ease;
-      background: transparent;
       color: var(--text);
-      text-decoration: none;
-      white-space: nowrap;
+      cursor: pointer;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #38bdf8, #6366f1);
-      border-color: transparent;
-      color: #0b1220;
+      border: none;
+      color: #020617;
       font-weight: 600;
     }
 
-    .btn-primary:hover {
-      filter: brightness(1.1);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      border-color: var(--border);
-      background: rgba(15, 23, 42, 0.7);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-    }
-
     .hero-card {
-      position: relative;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 55%),
-        radial-gradient(circle at bottom, rgba(129, 140, 248, 0.25), transparent 55%),
-        var(--card);
-      padding: 20px 18px 18px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
-      overflow: hidden;
+      background: var(--card);
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
     }
 
     .avatar-circle {
       width: 120px;
       height: 120px;
       border-radius: 999px;
-      border: 2px solid rgba(248, 250, 252, 0.2);
-      background: radial-gradient(circle at top, #1f2937, #020617);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .avatar-name {
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .avatar-role {
-      font-size: 12px;
-      color: var(--muted);
+      overflow: hidden;
       margin-bottom: 14px;
+      border: 2px solid rgba(255,255,255,0.15);
     }
-
-    .avatar-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
+    .avatar-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .pill {
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .hero-card-footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.35);
-      margin-top: 14px;
-      padding-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       font-size: 11px;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .hero-card-footer span {
-      color: var(--muted);
-    }
-
-    .socials {
-      display: flex;
-      gap: 10px;
-    }
-
-    .socials a {
-      width: 26px;
-      height: 26px;
+      padding: 5px 10px;
       border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      font-size: 13px;
+      background: rgba(255,255,255,0.05);
+      margin-right: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
     }
 
-    .socials a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
     }
 
-    /* Sections */
-    section {
-      margin-top: 32px;
+    .timeline { border-left: 1px dashed var(--muted); padding-left: 18px; }
+    .timeline-item {
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      position: absolute;
+      left: -22px;
+      top: 4px;
     }
 
     .section-title {
@@ -313,814 +176,300 @@
       margin-bottom: 12px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
-
-    .section-title span.dot {
+    .dot {
       width: 8px;
       height: 8px;
-      border-radius: 999px;
       background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.18);
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      background: rgba(15, 23, 42, 0.96);
-      border-radius: var(--radius-lg);
-      padding: 16px 16px 14px;
-      border: 1px solid rgba(31, 41, 55, 0.95);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.7);
-      font-size: 13px;
-    }
-
-    .card h3 {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    .card small {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .card ul {
-      margin-top: 8px;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-      font-size: 11px;
-    }
-
-    .chip {
-      background: var(--accent-soft);
       border-radius: 999px;
-      padding: 4px 9px;
-      border: 1px solid rgba(56, 189, 248, 0.5);
-      color: #bae6fd;
     }
 
-    .timeline {
-      border-left: 1px dashed rgba(75, 85, 99, 0.8);
-      padding-left: 16px;
-      margin-top: 6px;
-    }
-
-    .timeline-item {
-      margin-bottom: 12px;
-      position: relative;
-      padding-left: 6px;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -17px;
-      top: 4px;
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
-    }
-
-    .timeline-item span {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .contact-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 16px;
-      align-items: center;
-    }
-
-    .contact-meta {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .contact-list {
-      font-size: 13px;
-    }
-
-    .contact-list p {
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      word-break: break-all;
-    }
-
-    .contact-list i {
-      width: 18px;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-      opacity: 0.8;
-    }
-
-    /* Language visibility */
-    .lang {
-      display: none;
-    }
-
-    body.lang-vi .lang-vi {
-      display: inline;
-    }
-
-    body.lang-en .lang-en {
-      display: inline;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .header-right {
-        width: 100%;
-        justify-content: space-between;
-      }
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-card {
-        order: -1;
-      }
-      .contact-card {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-actions {
-        width: 100%;
-      }
-      .btn {
-        flex: 1 1 auto;
-        justify-content: center;
-      }
-    }
+    /* Language toggling */
+    .lang { display: none; }
+    body.lang-vi .lang-vi { display: inline; }
+    body.lang-en .lang-en { display: inline; }
   </style>
 </head>
+
 <body class="lang-vi">
-  <div class="container">
-    <!-- HEADER -->
-    <header>
-      <div class="logo">NGUYỄN ĐỨC MẠNH</div>
-      <div class="header-right">
-        <nav aria-label="Main navigation">
-          <a href="#about">
-            <span class="lang lang-vi">Giới thiệu</span>
-            <span class="lang lang-en">About</span>
-          </a>
-          <a href="#skills">
-            <span class="lang lang-vi">Kỹ năng</span>
-            <span class="lang lang-en">Skills</span>
-          </a>
-          <a href="#experience">
-            <span class="lang lang-vi">Kinh nghiệm</span>
-            <span class="lang lang-en">Experience</span>
-          </a>
-          <a href="#contact">
-            <span class="lang lang-vi">Liên hệ</span>
-            <span class="lang lang-en">Contact</span>
-          </a>
-        </nav>
-        <div class="lang-switch" aria-label="Language switch">
-          <button id="btn-vi" class="lang-btn active" type="button">VI</button>
-          <button id="btn-en" class="lang-btn" type="button">EN</button>
-        </div>
-      </div>
-    </header>
+<div class="container">
 
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">
-          <span class="lang lang-vi">Mechanical Designer &amp; Technician</span>
-          <span class="lang lang-en">Mechanical Designer &amp; Technician</span>
-        </p>
-        <h1 id="hero-title" class="hero-title">
-          <span class="lang lang-vi">
-            Kết hợp <span>Mechanical Design</span> &amp; <span>Automotive</span>
-            trong các dự án ứng dụng thực tế.
-          </span>
-          <span class="lang lang-en">
-            Integrating <span>Mechanical Design</span> &amp; <span>Automotive</span>
-            in real-world engineering projects.
-          </span>
-        </h1>
-        <p class="hero-sub">
-          <span class="lang lang-vi">
-            Sinh viên ngành Cơ khí – Ô tô tại Trường Đại học Bách Khoa TP. Hồ Chí Minh (HCMUT),
-            có kinh nghiệm thực tế trong công tác bảo hành – sửa chữa, thiết kế CAD 2D/3D
-            và tham gia dự án MarsRover 6x6 tại Bosch Automotive Lab. Hiện đang theo định hướng
-            embedded systems và tiếng Đức nhằm phát triển năng lực đa ngành và hướng tới trở thành
-            kỹ sư có khả năng làm việc trong môi trường quốc tế.
-          </span>
-          <span class="lang lang-en">
-            Automotive Engineering student at Ho Chi Minh City University of Technology (HCMUT)
-            with hands-on experience in warranty and repair, 2D/3D CAD design, and participation
-            in the MarsRover 6x6 project at Bosch Automotive Lab. Currently focusing on embedded
-            systems and German language to build a cross-disciplinary profile and pursue an
-            international engineering career.
-          </span>
-        </p>
+<header>
+  <div class="logo">NGUYỄN ĐỨC MẠNH</div>
 
-        <div class="hero-tags">
-          <span class="tag">CAD: AutoCAD, Inventor, Fusion 360</span>
-          <span class="tag">Mechanical Design</span>
-          <span class="tag">Warranty &amp; Technician</span>
-          <span class="tag">Farm &amp; Vehicle Layout Design</span>
-          <span class="tag">Project Management basics</span>
-        </div>
+  <div style="display:flex; gap:16px; align-items:center;">
+    <nav>
+      <a href="#about"><span class="lang lang-vi">Giới thiệu</span><span class="lang lang-en">About</span></a>
+      <a href="#skills"><span class="lang lang-vi">Kỹ năng</span><span class="lang lang-en">Skills</span></a>
+      <a href="#experience"><span class="lang lang-vi">Kinh nghiệm</span><span class="lang lang-en">Experience</span></a>
+      <a href="#contact"><span class="lang lang-vi">Liên hệ</span><span class="lang lang-en">Contact</span></a>
+    </nav>
 
-        <div class="hero-actions">
-          <a href="#experience" class="btn btn-primary">
-            <i class="fa-solid fa-rocket"></i>
-            <span class="lang lang-vi">Xem kinh nghiệm</span>
-            <span class="lang lang-en">View experience</span>
-          </a>
-          <a href="#contact" class="btn btn-ghost">
-            <i class="fa-regular fa-envelope"></i>
-            <span class="lang lang-vi">Kết nối</span>
-            <span class="lang lang-en">Get in touch</span>
-          </a>
-        </div>
-      </div>
+    <div class="lang-switch">
+      <button id="btn-vi" class="lang-btn active">VI</button>
+      <button id="btn-en" class="lang-btn">EN</button>
+    </div>
+  </div>
+</header>
 
-      <aside class="hero-card" aria-label="Profile summary">
-        <div class="avatar-circle" aria-hidden="true">
-          NDM
-        </div>
-        <div class="avatar-name">Nguyễn Đức Mạnh</div>
-        <div class="avatar-role">
-          <span class="lang lang-vi">Mechanical – Automotive Engineering Student · HCMUT</span>
-          <span class="lang lang-en">Mechanical – Automotive Engineering Student · HCMUT</span>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <p style="color:var(--muted); font-size:12px;">
+      Mechanical Designer & Technician
+    </p>
 
-        <div class="avatar-meta">
-          <span class="pill">Mechanical Designer</span>
-          <span class="pill">Technician &amp; Warranty</span>
-          <span class="pill">Business Support &amp; Farm Design</span>
-        </div>
+    <h1 class="hero-title">
+      <span class="lang lang-vi">Kết hợp <span>Mechanical Design</span> & <span>Automotive</span> trong các dự án ứng dụng thực tế.</span>
+      <span class="lang lang-en">Integrating <span>Mechanical Design</span> & <span>Automotive Engineering</span> in real-world projects.</span>
+    </h1>
 
-        <div class="hero-card-footer">
-          <span>
-            <span class="lang lang-vi">Quan tâm đến cơ hội thực tập và part-time trong lĩnh vực Mechanical / Automotive.</span>
-            <span class="lang lang-en">Interested in Mechanical / Automotive internship and part-time opportunities.</span>
-          </span>
-          <div class="socials" aria-label="Social links">
-            <a href="https://github.com/Germieee" title="GitHub" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/christian-nguyen899" title="LinkedIn" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="mailto:23nd.manh@gmail.com" title="Email">
-              <i class="fa-regular fa-envelope"></i>
-            </a>
-          </div>
-        </div>
-      </aside>
-    </section>
+    <p class="hero-sub">
+      <span class="lang lang-vi">
+        Sinh viên ngành Cơ khí – Ô tô tại HCMUT, có kinh nghiệm bảo hành – sửa chữa, thiết kế CAD 2D/3D và tham gia dự án MarsRover 6x6 tại Bosch Automotive Lab. Hiện theo định hướng phát triển kỹ sư đa ngành với nền tảng cơ khí – điện tử – mô phỏng.
+      </span>
 
-    <!-- ABOUT & SKILLS -->
-    <section id="about">
-      <div class="section-title">
-        <span class="dot"></span>
-        <span class="lang lang-vi">Giới thiệu</span>
-        <span class="lang lang-en">About</span>
-      </div>
-      <div class="section-grid">
-        <div class="card">
-          <h3>
-            <span class="lang lang-vi">Tổng quan hồ sơ</span>
-            <span class="lang lang-en">Profile Summary</span>
-          </h3>
-          <p style="color:var(--muted);margin-top:6px;">
-            <span class="lang lang-vi">
-              Là sinh viên ngành Automotive Engineering tại HCMUT (từ năm 2021), định hướng nghề nghiệp
-              trở thành Mechanical Designer với nền tảng CAD vững, hiểu biết về quy trình chế tạo
-              và triển khai sản phẩm. Đã tham gia các môi trường nghiên cứu và công nghiệp như
-              Bosch Automotive Lab, Samco, Big Dutchman, Bravigo và MIHanoi với các vai trò liên quan
-              đến thiết kế cơ khí, farm design và kỹ thuật bảo hành. Quan tâm đặc biệt đến tư duy hệ thống,
-              tối ưu hóa quy trình và khai thác các cơ hội giao thoa giữa cơ khí, phần mềm và mô phỏng.
-            </span>
-            <span class="lang lang-en">
-              Automotive Engineering student at HCMUT (since 2021) with a career objective of becoming
-              a Mechanical Designer with strong CAD capabilities and a solid understanding of
-              manufacturing and product implementation processes. Has gained experience in both research
-              and industry environments such as Bosch Automotive Lab, Samco, Big Dutchman, Bravigo and
-              MIHanoi in roles related to mechanical design, farm design and technical warranty.
-              Particularly interested in systems thinking, process optimization and leveraging the
-              intersection of mechanics, software and simulation.
-            </span>
-          </p>
-        </div>
+      <span class="lang lang-en">
+        Automotive Engineering student at HCMUT with experience in warranty repair, 2D/3D CAD design, and participation in the MarsRover 6x6 project at Bosch Automotive Lab. Currently building a cross-disciplinary engineering profile across mechanics, electronics, and simulation.
+      </span>
+    </p>
 
-        <section id="skills" class="card" aria-label="Skills">
-          <h3>
-            <span class="lang lang-vi">Kỹ năng chuyên môn</span>
-            <span class="lang lang-en">Core Skills</span>
-          </h3>
-          <ul>
-            <li>
-              <span class="lang lang-vi">
-                Computer-Aided Design (CAD): xây dựng mô hình 2D/3D cho chi tiết và cụm lắp, phục vụ thiết kế,
-                lắp ráp và trình bày kỹ thuật.
-              </span>
-              <span class="lang lang-en">
-                Computer-Aided Design (CAD): developing 2D/3D models for parts and assemblies to support
-                design, assembly and technical documentation.
-              </span>
-            </li>
-            <li>
-              <span class="lang lang-vi">
-                Mechanical Design &amp; quản lý quy trình sản xuất ở mức cơ bản: xem xét tính công nghệ,
-                khả năng gia công và lắp ráp trong thiết kế.
-              </span>
-              <span class="lang lang-en">
-                Mechanical Design &amp; basic manufacturing process management: considering manufacturability,
-                assembly feasibility and process constraints in design.
-              </span>
-            </li>
-            <li>
-              <span class="lang lang-vi">
-                Project Management, Problem-solving, Strategic &amp; Critical Thinking trong phạm vi dự án sinh viên
-                và các nhiệm vụ được giao tại doanh nghiệp.
-              </span>
-              <span class="lang lang-en">
-                Project Management, Problem-solving, Strategic &amp; Critical Thinking applied to student projects
-                and assigned tasks in industry.
-              </span>
-            </li>
-            <li>
-              <span class="lang lang-vi">
-                Kỹ năng làm việc nhóm và giao tiếp với các bộ phận liên quan (sales, kỹ thuật, khách hàng)
-                trong quá trình triển khai giải pháp.
-              </span>
-              <span class="lang lang-en">
-                Teamwork and communication skills with relevant stakeholders (sales, engineering, customers)
-                throughout project implementation.
-              </span>
-            </li>
-            <li>
-              <span class="lang lang-vi">
-                Sử dụng Word, Excel trong việc lập báo cáo, theo dõi dữ liệu kỹ thuật và hỗ trợ quản lý công việc.
-              </span>
-              <span class="lang lang-en">
-                Proficient in using Word and Excel for reporting, tracking technical data and supporting task management.
-              </span>
-            </li>
-          </ul>
+    <div style="margin:10px 0;">
+      <span class="tag">CAD: AutoCAD · Inventor · Fusion 360</span>
+      <span class="tag">Mechanical Design</span>
+      <span class="tag">Warranty & Technician</span>
+      <span class="tag">Farm Layout Design</span>
+    </div>
 
-          <h3 style="margin-top:12px;font-size:13px;">Mindset &amp; Thinking</h3>
-          <ul>
-            <li>System Thinking &amp; Process Optimization.</li>
-            <li>Cross-disciplinary Problem Solving.</li>
-            <li>Product &amp; Platform Thinking.</li>
-            <li>Innovation &amp; Opportunity Recognition.</li>
-            <li>Technical Creativity (Engineering + Software + Simulation).</li>
-            <li>Strategic Analysis &amp; Long-term Planning.</li>
-          </ul>
-
-          <div class="chip-row">
-            <span class="chip">Systems Thinking</span>
-            <span class="chip">Product &amp; Platform Thinking</span>
-            <span class="chip">Innovation &amp; Opportunity</span>
-            <span class="chip">Cross-disciplinary Problem Solving</span>
-          </div>
-        </section>
-
-        <div class="card">
-          <h3>
-            <span class="lang lang-vi">Ngôn ngữ &amp; Thành tích học thuật</span>
-            <span class="lang lang-en">Languages &amp; Academic Achievements</span>
-          </h3>
-          <ul>
-            <li>
-              <span class="lang lang-vi">Tiếng Việt – Ngôn ngữ mẹ đẻ.</span>
-              <span class="lang lang-en">Vietnamese – Native language.</span>
-            </li>
-            <li>
-              <span class="lang lang-vi">Tiếng Anh – IELTS 6.0, có khả năng đọc hiểu tài liệu kỹ thuật.</span>
-              <span class="lang lang-en">English – IELTS 6.0, capable of comprehending technical documentation.</span>
-            </li>
-            <li>
-              <span class="lang lang-vi">Tiếng Đức – Goethe-Zertifikat A1, đang tiếp tục học lên A2/B1.</span>
-              <span class="lang lang-en">German – Goethe-Zertifikat A1, currently progressing towards A2/B1.</span>
-            </li>
-          </ul>
-
-          <h3 style="margin-top:12px;font-size:13px;">
-            <span class="lang lang-vi">Môn học &amp; điểm số tiêu biểu</span>
-            <span class="lang lang-en">Selected Courses &amp; Grades</span>
-          </h3>
-          <ul style="margin-top:6px;">
-            <li>
-              <span class="lang lang-vi">Đồ án Thiết kế Ô tô – <strong>8.5/10</strong></span>
-              <span class="lang lang-en">Automotive Design Project – <strong>8.5/10</strong></span>
-            </li>
-            <li>
-              <span class="lang lang-vi">Đồ án Chuyên ngành Ô tô – <strong>8.5/10</strong></span>
-              <span class="lang lang-en">Specialized Automotive Project – <strong>8.5/10</strong></span>
-            </li>
-            <li>
-              <span class="lang lang-vi">Phương pháp Thiết kế Động cơ &amp; Ô tô – <strong>7.3/10</strong></span>
-              <span class="lang lang-en">Design Methods for Engines &amp; Vehicles – <strong>7.3/10</strong></span>
-            </li>
-            <li>
-              <span class="lang lang-vi">Thí nghiệm Ô tô &amp; Động cơ đốt trong – <strong>7.8/10</strong></span>
-              <span class="lang lang-en">Automotive &amp; Internal Combustion Engine Laboratory – <strong>7.8/10</strong></span>
-            </li>
-            <li>
-              <span class="lang lang-vi">Thực hành Tự động hóa Thiết kế (CAD) – <strong>7.0/10</strong></span>
-              <span class="lang lang-en">Design Automation Practice (CAD) – <strong>7.0/10</strong></span>
-            </li>
-            <li>
-              <span class="lang lang-vi">Thực tập Kỹ thuật Ô tô – <strong>7.3/10</strong></span>
-              <span class="lang lang-en">Automotive Engineering Internship – <strong>7.3/10</strong></span>
-            </li>
-            <li>
-              <span class="lang lang-vi">Thực tập Ngoài trường (Ngành Ô tô) – <strong>7.0/10</strong></span>
-              <span class="lang lang-en">Off-campus Internship (Automotive) – <strong>7.0/10</strong></span>
-            </li>
-          </ul>
-
-          <div class="chip-row">
-            <span class="chip">Kinematics &amp; Dynamics of Machines 7.3</span>
-            <span class="chip">Mechanical Engineering 8.1</span>
-            <span class="chip">General Mechanical Internship 7.5</span>
-            <span class="chip">Mechanical Components 7.3</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-title">
-        <span class="dot"></span>
-        <span class="lang lang-vi">Kinh nghiệm làm việc</span>
-        <span class="lang lang-en">Professional Experience</span>
-      </div>
-      <div class="card">
-        <div class="timeline">
-          <div class="timeline-item">
-            <strong>Mechanical Designer – Bosch Automotive Lab (MarsRover Project)</strong><br>
-            <span>Bosch · 2025 – nay</span>
-            <p style="color:var(--muted);margin-top:4px;">
-              <span class="lang lang-vi">
-                Tham gia nhóm cơ khí trong dự án thiết kế mô hình xe MarsRover 6x6, tập trung vào các hoạt động:
-              </span>
-              <span class="lang lang-en">
-                Member of the mechanical team in the MarsRover 6x6 design project, with responsibilities including:
-              </span>
-            </p>
-            <ul>
-              <li>
-                <span class="lang lang-vi">
-                  Thiết kế mô hình 3D cho chassis, hệ thống treo rocker–bogie, cụm tay đòn và khung đỡ
-                  bằng Inventor và Fusion 360, đảm bảo tính hợp lý về kết cấu và lắp ghép.
-                </span>
-                <span class="lang lang-en">
-                  Developing 3D models for chassis, rocker–bogie suspension, linkage arms and support frames
-                  in Inventor and Fusion 360, ensuring structural integrity and assembly feasibility.
-                </span>
-              </li>
-              <li>
-                <span class="lang lang-vi">
-                  Phối hợp với nhóm điều khiển để bố trí cơ khí phù hợp với sensor, actuator và layout hệ thống truyền động,
-                  tạo điều kiện thuận lợi cho lắp đặt và bảo trì.
-                </span>
-                <span class="lang lang-en">
-                  Collaborating with the control team to align mechanical layout with sensors, actuators
-                  and drivetrain configuration, facilitating installation and maintenance.
-                </span>
-              </li>
-              <li>
-                <span class="lang lang-vi">
-                  Tham gia quá trình gia công, lắp ráp prototype; đề xuất các điều chỉnh kết cấu nhằm cải thiện
-                  khả năng chế tạo, độ bền và tính ổn định trong vận hành.
-                </span>
-                <span class="lang lang-en">
-                  Contributing to fabrication and assembly of prototypes; proposing structural adjustments
-                  to improve manufacturability, durability and operational stability.
-                </span>
-              </li>
-              <li>
-                <span class="lang lang-vi">
-                  Kiểm soát dung sai thiết kế: lựa chọn kiểu lắp và dung sai cho ổ lăn, trục và gối đỡ, bảo đảm
-                  độ chính xác lắp ghép, độ bền mỏi và khả năng tháo lắp khi bảo trì.
-                </span>
-                <span class="lang lang-en">
-                  Managing design tolerances: selecting fits and tolerances for bearings, shafts and housings
-                  to ensure assembly accuracy, fatigue strength and serviceability.
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Business Support &amp; Farm Design – Part-time Intern</strong><br>
-            <span>BIG DUTCHMAN VIETNAM · 2024 – 2025</span>
-            <p style="color:var(--muted);margin-top:4px;">
-              <span class="lang lang-vi">
-                Thực hiện thiết kế và điều chỉnh bản vẽ 2D/3D bằng AutoCAD; bảo đảm bản vẽ phù hợp với cấu hình
-                sản phẩm và báo giá. Phối hợp với bộ phận sales và kỹ thuật để xây dựng layout trang trại
-                và bố trí thiết bị chăn nuôi đáp ứng các yêu cầu kỹ thuật và nhu cầu của khách hàng.
-              </span>
-              <span class="lang lang-en">
-                Produced and revised 2D/3D drawings using AutoCAD, ensuring consistency between drawings,
-                product configurations and quotations. Collaborated with sales and technical teams to
-                develop farm layouts and equipment layouts that satisfy technical constraints and
-                customer requirements.
-              </span>
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Special Purpose Vehicle Design Intern – Full-time</strong><br>
-            <span>SAMCO · June – August 2023</span>
-            <p style="color:var(--muted);margin-top:4px;">
-              <span class="lang lang-vi">
-                Hỗ trợ thiết kế các loại xe chuyên dùng (ambulance, garbage truck, ...); dựng và cập nhật
-                bản vẽ 2D/3D bằng AutoCAD/Inventor; bố trí thiết bị và nội thất trên chassis theo yêu cầu kỹ thuật.
-                Làm việc cùng kỹ sư senior để bảo đảm tính khả thi, tuân thủ tiêu chuẩn và phù hợp quy định hiện hành.
-              </span>
-              <span class="lang lang-en">
-                Assisted in designing special-purpose vehicles (ambulance, garbage truck, etc.);
-                created and updated 2D/3D drawings in AutoCAD/Inventor; arranged equipment and interior
-                components on the chassis to meet technical requirements. Worked closely with senior engineers
-                to ensure feasibility, compliance with standards and regulatory requirements.
-              </span>
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Technician &amp; Warranty Staff – Full-time</strong><br>
-            <span>BRAVIGO · May – July 2023</span>
-            <p style="color:var(--muted);margin-top:4px;">
-              <span class="lang lang-vi">
-                Tiếp nhận và xử lý các trường hợp bảo hành màn hình Android ô tô; hỗ trợ khách hàng
-                qua nhiều kênh liên lạc; chẩn đoán lỗi, tư vấn thông số kỹ thuật và hướng dẫn khắc phục.
-                Theo dõi tiến độ xử lý và phối hợp với các phòng ban liên quan để bảo đảm chất lượng dịch vụ.
-              </span>
-              <span class="lang lang-en">
-                Handled warranty cases for in-car Android screens; supported customers via multiple channels;
-                diagnosed issues, provided technical advice and troubleshooting guidance. Monitored case progress
-                and coordinated with relevant departments to maintain service quality.
-              </span>
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <strong>Technician &amp; Warranty Staff – Part-time</strong><br>
-            <span>MIHANOI · Jan – April 2023</span>
-            <p style="color:var(--muted);margin-top:4px;">
-              <span class="lang lang-vi">
-                Quản lý luồng sản phẩm bảo hành giữa cửa hàng và kho kỹ thuật; kiểm tra, sửa chữa
-                và cài đặt phần mềm điều khiển cho thiết bị Xiaomi trước khi bàn giao cho khách hàng,
-                góp phần rút ngắn thời gian xử lý và giảm thiểu sai sót kỹ thuật.
-              </span>
-              <span class="lang lang-en">
-                Managed warranty product flow between the retail store and technical warehouse;
-                inspected, repaired and configured control software for Xiaomi devices prior to delivery,
-                contributing to shorter turnaround times and reduced technical errors.
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION & CERT -->
-    <section>
-      <div class="section-title">
-        <span class="dot"></span>
-        <span class="lang lang-vi">Học vấn &amp; Chứng chỉ</span>
-        <span class="lang lang-en">Education &amp; Certifications</span>
-      </div>
-      <div class="section-grid">
-        <div class="card">
-          <h3>
-            <span class="lang lang-vi">Automotive Engineering – HCMC University of Technology</span>
-            <span class="lang lang-en">Automotive Engineering – HCMC University of Technology</span>
-          </h3>
-          <small>2021 – nay</small>
-          <ul>
-            <li>
-              <span class="lang lang-vi">
-                Chương trình tập trung vào cơ học máy, chi tiết máy, thực tập cơ khí
-                và hệ thống động lực ô tô; cung cấp nền tảng cơ bản về thiết kế và phân tích kỹ thuật.
-              </span>
-              <span class="lang lang-en">
-                Curriculum focuses on mechanics, machine elements, mechanical internships and automotive
-                powertrain systems, providing a solid foundation in engineering design and analysis.
-              </span>
-            </li>
-            <li>
-              <span class="lang lang-vi">
-                Đồng thời tìm hiểu và ứng dụng CAD/CAE, thiết kế và mô phỏng trên Inventor, Fusion 360, Simulink
-                trong các bài tập và đồ án.
-              </span>
-              <span class="lang lang-en">
-                In parallel, exploring and applying CAD/CAE tools such as Inventor, Fusion 360 and Simulink
-                in coursework and projects.
-              </span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>
-            <span class="lang lang-vi">Selected Certifications</span>
-            <span class="lang lang-en">Selected Certifications</span>
-          </h3>
-          <ul>
-            <li>Autodesk Inventor Workshop Series 2024 – HCMUT.</li>
-            <li>Autodesk Certified Professional: Inventor for Mechanical Design (Exam Prep).</li>
-            <li>Introduction to Mechanical Engineering Design and Manufacturing with Fusion 360.</li>
-            <li>Generative Design for Additive Manufacturing.</li>
-            <li>CFD Simulation Through a Centrifugal Pump.</li>
-            <li>Computational Fluid Mechanics – Airflow Around a Spoiler.</li>
-            <li>Foundations of Project Management; Introduction to Data Analytics.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- VOLUNTEER -->
-    <section>
-      <div class="section-title">
-        <span class="dot"></span>
-        <span class="lang lang-vi">Hoạt động &amp; Cộng đồng</span>
-        <span class="lang lang-en">Volunteer &amp; Community</span>
-      </div>
-      <div class="card">
-        <ul>
-          <li>
-            <span class="lang lang-vi">
-              Volunteer – <strong>100 Days Flying – OISP Volunteer Club (2021–2022)</strong>:
-              tham gia xây dựng nhà sinh học, trao quà cho học sinh tại khu vực khó khăn và hỗ trợ
-              các hoạt động gây quỹ của câu lạc bộ.
-            </span>
-            <span class="lang lang-en">
-              Volunteer – <strong>100 Days Flying – OISP Volunteer Club (2021–2022)</strong>:
-              contributed to building bio-houses, delivering gifts to students in underprivileged areas
-              and supporting the club’s fundraising activities.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-vi">
-              Volunteer – <strong>Saigon Care (2023–nay)</strong>: tham gia các chương trình
-              hỗ trợ người vô gia cư và tặng quà định kỳ cho các tổ chức bảo vệ trẻ em.
-            </span>
-            <span class="lang lang-en">
-              Volunteer – <strong>Saigon Care (2023–present)</strong>: involved in programs
-              supporting homeless individuals and providing regular donations to child protection organizations.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-vi">
-              Singer – <strong>20somthings – Bee Volunteer Club (2025)</strong>: biểu diễn
-              trong chương trình gây quỹ hỗ trợ trường học tại khu vực Đắk Lắk.
-            </span>
-            <span class="lang lang-en">
-              Singer – <strong>20somthings – Bee Volunteer Club (2025)</strong>: performed
-              in fundraising events to support schools in Đắk Lắk province.
-            </span>
-          </li>
-          <li>
-            <span class="lang lang-vi">
-              HR/Risk management – <strong>Giai Điệu Trẻ Club (2023–nay)</strong>: tham gia
-              công tác tổ chức sự kiện, hỗ trợ phát triển vocal band và đóng góp vào quản lý rủi ro
-              trong hoạt động của câu lạc bộ.
-            </span>
-            <span class="lang lang-en">
-              HR/Risk management – <strong>Giai Điệu Trẻ Club (2023–present)</strong>:
-              involved in event organization, supporting vocal band development and contributing
-              to risk management for club activities.
-            </span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-title">
-        <span class="dot"></span>
-        <span class="lang lang-vi">Liên hệ</span>
-        <span class="lang lang-en">Contact</span>
-      </div>
-      <div class="card contact-card">
-        <div class="contact-meta">
-          <span class="lang lang-vi">
-            Quan tâm đến các cơ hội:
-          </span>
-          <span class="lang lang-en">
-            Open to opportunities in:
-          </span>
-          <ul style="margin-top:6px;padding-left:18px;">
-            <li>
-              <span class="lang lang-vi">
-                Thực tập hoặc part-time trong lĩnh vực Mechanical Design, CAD và Automotive.
-              </span>
-              <span class="lang lang-en">
-                Internships or part-time roles in Mechanical Design, CAD and Automotive Engineering.
-              </span>
-            </li>
-            <li>
-              <span class="lang lang-vi">
-                Các dự án Farm Design, đặc biệt liên quan đến nông nghiệp ứng dụng công nghệ cao.
-              </span>
-              <span class="lang lang-en">
-                Farm Design projects, especially in high-tech agriculture environments.
-              </span>
-            </li>
-            <li>
-              <span class="lang lang-vi">
-                Trao đổi chuyên môn về con đường du học, phát triển nghề nghiệp kỹ sư đa ngành
-                và các dự án nghiên cứu – ứng dụng.
-              </span>
-              <span class="lang lang-en">
-                Professional discussions about study-abroad pathways, cross-disciplinary engineering careers
-                and applied research projects.
-              </span>
-            </li>
-          </ul>
-        </div>
-        <div class="contact-list">
-          <p>
-            <i class="fa-regular fa-envelope"></i>
-            <a href="mailto:23nd.manh@gmail.com">23nd.manh@gmail.com</a>
-          </p>
-          <p>
-            <i class="fa-solid fa-phone"></i>
-            <a href="tel:+84878768988">+84 878 768 988</a>
-          </p>
-          <p>
-            <i class="fa-brands fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/christian-nguyen899" target="_blank" rel="noreferrer">
-              linkedin.com/in/christian-nguyen899
-            </a>
-          </p>
-          <p>
-            <i class="fa-brands fa-github"></i>
-            <a href="https://github.com/Germieee" target="_blank" rel="noreferrer">
-              github.com/Germieee
-            </a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Nguyễn Đức Mạnh · Built with GitHub Pages
-    </footer>
+    <div style="margin-top:20px;">
+      <a href="#experience" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> <span class="lang lang-vi">Xem kinh nghiệm</span><span class="lang lang-en">Experience</span></a>
+      <a href="#contact" class="btn"><i class="fa-regular fa-envelope"></i> <span class="lang lang-vi">Liên hệ</span><span class="lang lang-en">Contact</span></a>
+    </div>
   </div>
 
-  <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
+  <!-- PROFILE CARD -->
+  <div class="hero-card">
+    <div class="avatar-circle">
+      <img src="avatar.jpg" alt="Ảnh cá nhân">
+    </div>
 
-    // Language toggle
-    const btnVi = document.getElementById("btn-vi");
-    const btnEn = document.getElementById("btn-en");
+    <p style="font-weight:600;">Nguyễn Đức Mạnh</p>
+    <p style="font-size:12px; color:var(--muted);">Mechanical – Automotive Engineering Student | HCMUT</p>
 
-    function setLang(lang) {
-      document.body.classList.remove("lang-vi", "lang-en");
-      document.body.classList.add(lang === "en" ? "lang-en" : "lang-vi");
-      document.documentElement.lang = lang === "en" ? "en" : "vi";
+    <div style="margin-top:10px;">
+      <span class="pill">Mechanical Designer</span>
+      <span class="pill">Technician</span>
+      <span class="pill">Farm Design Support</span>
+    </div>
 
-      if (lang === "en") {
-        btnEn.classList.add("active");
-        btnVi.classList.remove("active");
-      } else {
-        btnVi.classList.add("active");
-        btnEn.classList.remove("active");
-      }
-    }
+    <div style="margin-top:14px; border-top:1px solid var(--border); padding-top:10px; font-size:12px;">
+      <span class="lang lang-vi">Quan tâm đến cơ hội Mechanical / Automotive.</span>
+      <span class="lang lang-en">Open to Mechanical / Automotive roles.</span>
 
-    btnVi.addEventListener("click", () => setLang("vi"));
-    btnEn.addEventListener("click", () => setLang("en"));
-  </script>
+      <div style="display:flex; gap:10px; margin-top:10px;">
+        <a href="https://github.com/Germieee" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/christian-nguyen899" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:23nd.manh@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-title">
+    <span class="dot"></span>
+    <span class="lang lang-vi">Giới thiệu</span>
+    <span class="lang lang-en">About</span>
+  </div>
+
+  <div class="card">
+    <h3><span class="lang lang-vi">Tổng quan hồ sơ</span><span class="lang lang-en">Profile Summary</span></h3>
+
+    <p style="color:var(--muted); margin-top:6px;">
+      <span class="lang lang-vi">
+        Sinh viên ngành Automotive Engineering tại HCMUT với định hướng trở thành Mechanical Designer. Kinh nghiệm tại Bosch Automotive Lab, Samco, Big Dutchman, Bravigo và MIHanoi giúp mình phát triển tư duy thiết kế, khả năng làm việc đa lĩnh vực và hiểu rõ quy trình triển khai sản phẩm kỹ thuật.
+      </span>
+
+      <span class="lang lang-en">
+        Automotive Engineering student at HCMUT pursuing a career as a Mechanical Designer. Experience across Bosch Automotive Lab, Samco, Big Dutchman, Bravigo and MIHanoi has strengthened my design mindset, interdisciplinary adaptability and understanding of engineering implementation processes.
+      </span>
+    </p>
+  </div>
+
+  <div class="card" id="skills">
+    <h3><span class="lang lang-vi">Kỹ năng chuyên môn</span><span class="lang lang-en">Technical Skills</span></h3>
+
+    <ul>
+      <li><span class="lang lang-vi">CAD 2D/3D cho chi tiết & cụm.</span><span class="lang lang-en">2D/3D CAD modeling for parts and assemblies.</span></li>
+      <li><span class="lang lang-vi">Mechanical Design & tư duy sản xuất.</span><span class="lang lang-en">Mechanical design & manufacturability considerations.</span></li>
+      <li><span class="lang lang-vi">Problem-solving & tư duy hệ thống.</span><span class="lang lang-en">Problem-solving and systems thinking.</span></li>
+      <li><span class="lang lang-vi">Giao tiếp & phối hợp đa bộ phận.</span><span class="lang lang-en">Interdisciplinary communication skills.</span></li>
+      <li><span class="lang lang-vi">Báo cáo kỹ thuật (Word, Excel).</span><span class="lang lang-en">Technical reporting (Word, Excel).</span></li>
+    </ul>
+
+    <h3 style="margin-top:12px;">Mindset & Thinking</h3>
+    <ul>
+      <li>System Thinking & Process Optimization</li>
+      <li>Cross-disciplinary Problem Solving</li>
+      <li>Product & Platform Thinking</li>
+      <li>Innovation & Opportunity Recognition</li>
+      <li>Technical Creativity</li>
+      <li>Strategic Analysis & Long-term Planning</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="lang lang-vi">Ngôn ngữ & Thành tích học thuật</span><span class="lang lang-en">Languages & Academic Records</span></h3>
+
+    <ul>
+      <li>Vietnamese – Native</li>
+      <li>English – IELTS 6.0</li>
+      <li>German – Goethe A1 (studying A2/B1)</li>
+    </ul>
+
+    <h4 style="margin-top:12px;">Courses & Grades</h4>
+    <ul>
+      <li>Automotive Design Project – 8.5/10</li>
+      <li>Specialized Automotive Project – 8.5/10</li>
+      <li>Design Methods for Engines & Vehicles – 7.3/10</li>
+      <li>Automotive & IC Engine Laboratory – 7.8/10</li>
+      <li>CAD Automation Practice – 7.0/10</li>
+      <li>Automotive Internship – 7.3/10</li>
+      <li>Off-campus Internship – 7.0/10</li>
+    </ul>
+  </div>
+</section>
+<section id="experience">
+  <div class="section-title">
+    <span class="dot"></span>
+    <span class="lang lang-vi">Kinh nghiệm</span>
+    <span class="lang lang-en">Experience</span>
+  </div>
+
+  <div class="card timeline">
+
+    <!-- BOSCH -->
+    <div class="timeline-item">
+      <strong>Mechanical Designer – Bosch Automotive Lab (MarsRover Project)</strong><br>
+      <span>Bosch · 2025 – nay</span>
+
+      <p style="color:var(--muted); margin-top:6px;">
+        <span class="lang lang-vi">
+          Thành viên nhóm cơ khí trong dự án MarsRover 6x6: thiết kế chassis, cơ cấu rocker–bogie, cụm tay đòn, housing cho ổ bi; phối hợp nhóm điều khiển để tối ưu layout; tham gia gia công – lắp ráp prototype; kiểm soát dung sai và lựa chọn kiểu lắp.
+        </span>
+        <span class="lang lang-en">
+          Member of the mechanical team in the MarsRover 6x6 project: responsible for chassis, rocker–bogie mechanism, linkage arms and bearing housings; collaborated with controls team for layout optimization; assisted in fabrication & assembly; managed tolerances and fit selection.
+        </span>
+      </p>
+    </div>
+
+    <!-- BIG DUTCHMAN -->
+    <div class="timeline-item">
+      <strong>Business Support & Farm Design – Part-time Intern</strong><br>
+      <span>Big Dutchman Vietnam · 2024 – 2025</span>
+
+      <p style="color:var(--muted); margin-top:6px;">
+        <span class="lang lang-vi">
+          Thiết kế bản vẽ 2D/3D layout trang trại bằng AutoCAD; đảm bảo bản vẽ phù hợp cấu hình thiết bị; phối hợp bộ phận sales & kỹ thuật để phát triển giải pháp đáp ứng yêu cầu khách hàng.
+        </span>
+        <span class="lang lang-en">
+          Produced 2D/3D farm layout drawings using AutoCAD; ensured drawing–quotation consistency; collaborated with sales and engineering teams to develop customer-suited layouts.
+        </span>
+      </p>
+    </div>
+
+    <!-- SAMCO -->
+    <div class="timeline-item">
+      <strong>Special Purpose Vehicle Design Intern – Full-time</strong><br>
+      <span>SAMCO · June – August 2023</span>
+
+      <p style="color:var(--muted); margin-top:6px;">
+        <span class="lang lang-vi">
+          Hỗ trợ thiết kế xe cứu thương, xe chở rác; dựng bản vẽ 2D/3D trên AutoCAD/Inventor; bố trí thiết bị trên chassis; phối hợp kỹ sư để đảm bảo tính khả thi kỹ thuật và tuân thủ tiêu chuẩn.
+        </span>
+        <span class="lang lang-en">
+          Assisted in designing ambulances and garbage trucks; developed 2D/3D CAD drawings; arranged equipment layouts on chassis; ensured compliance with standards and technical feasibility.
+        </span>
+      </p>
+    </div>
+
+    <!-- BRAVIGO -->
+    <div class="timeline-item">
+      <strong>Technician & Warranty Staff – Full-time</strong><br>
+      <span>Bravigo · May – July 2023</span>
+
+      <p style="color:var(--muted);">
+        <span class="lang lang-vi">
+          Xử lý bảo hành màn hình Android ô tô; chẩn đoán lỗi; tư vấn kỹ thuật; theo dõi tiến trình xử lý và phối hợp nhiều bộ phận.
+        </span>
+        <span class="lang lang-en">
+          Handled automotive Android screen warranty services; diagnosed failures; provided technical consultation; coordinated multi-department case resolution.
+        </span>
+      </p>
+    </div>
+
+    <!-- MIHANOI -->
+    <div class="timeline-item">
+      <strong>Technician & Warranty Staff – Part-time</strong><br>
+      <span>MIHanoi · Jan – Apr 2023</span>
+
+      <p style="color:var(--muted);">
+        <span class="lang lang-vi">
+          Quản lý luồng sản phẩm bảo hành; kiểm tra – sửa chữa – cài đặt firmware cho thiết bị Xiaomi; tối ưu thời gian xử lý.
+        </span>
+        <span class="lang lang-en">
+          Managed warranty product flow; inspected–repaired–configured Xiaomi firmware; optimized handling time.
+        </span>
+      </p>
+    </div>
+
+  </div>
+</section>
+<section id="contact">
+  <div class="section-title">
+    <span class="dot"></span>
+    <span class="lang lang-vi">Liên hệ</span>
+    <span class="lang lang-en">Contact</span>
+  </div>
+
+  <div class="card">
+    <p>
+      <span class="lang lang-vi">Sẵn sàng trao đổi về cơ hội Mechanical Design, CAD và Automotive Engineering.</span>
+      <span class="lang lang-en">Open for discussions on Mechanical Design, CAD and Automotive Engineering opportunities.</span>
+    </p>
+
+    <p style="margin-top:8px;">
+      <i class="fa-regular fa-envelope"></i> 23nd.manh@gmail.com<br>
+      <i class="fa-solid fa-phone"></i>  +84 878 768 988<br>
+      <i class="fa-brands fa-linkedin"></i> linkedin.com/in/christian-nguyen899<br>
+      <i class="fa-brands fa-github"></i> github.com/Germieee
+    </p>
+  </div>
+</section>
+
+<footer style="text-align:center; color:var(--muted); margin-top:40px;">
+  © <span id="year"></span> Nguyễn Đức Mạnh
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const btnVi = document.getElementById("btn-vi");
+  const btnEn = document.getElementById("btn-en");
+
+  function setLang(lang) {
+    document.body.classList.remove("lang-vi", "lang-en");
+    document.body.classList.add(lang === "en" ? "lang-en" : "lang-vi");
+
+    btnVi.classList.toggle("active", lang === "vi");
+    btnEn.classList.toggle("active", lang === "en");
+  }
+
+  btnVi.onclick = () => setLang("vi");
+  btnEn.onclick = () => setLang("en");
+</script>
+
+</div>
 </body>
 </html>
