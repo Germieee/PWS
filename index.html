@@ -2,8 +2,11 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Nguyễn Đức Mạnh – Mechanical Designer</title>
+  <title>Nguyễn Đức Mạnh – Mechanical & Automotive Designer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nguyễn Đức Mạnh – Mechanical & Automotive Engineering student (HCMUT) với kinh nghiệm CAD 2D/3D, thiết kế xe chuyên dùng, MarsRover 6x6 tại Bosch Lab và Farm Design tại Big Dutchman." />
+  <meta name="keywords" content="Nguyen Duc Manh, Mechanical Designer, Automotive Engineering, CAD, Inventor, Fusion 360, HCMUT" />
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome Icons -->
@@ -69,8 +72,27 @@
       color: var(--muted);
     }
 
+    nav a {
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.18s ease;
+    }
+
     nav a:hover {
       color: var(--accent);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* HERO */
@@ -133,6 +155,8 @@
       transition: all 0.18s ease;
       background: transparent;
       color: var(--text);
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     .btn-primary {
@@ -159,9 +183,10 @@
     .hero-card {
       position: relative;
       border-radius: 24px;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 55%),
-                  radial-gradient(circle at bottom, rgba(129, 140, 248, 0.25), transparent 55%),
-                  var(--card);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 55%),
+        radial-gradient(circle at bottom, rgba(129, 140, 248, 0.25), transparent 55%),
+        var(--card);
       padding: 20px 18px 18px;
       border: 1px solid rgba(148, 163, 184, 0.35);
       box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
@@ -215,6 +240,8 @@
       align-items: center;
       justify-content: space-between;
       font-size: 11px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .hero-card-footer span {
@@ -359,6 +386,10 @@
 
     .contact-list p {
       margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      word-break: break-all;
     }
 
     .contact-list i {
@@ -388,6 +419,13 @@
       .contact-card {
         grid-template-columns: minmax(0, 1fr);
       }
+      .hero-actions {
+        width: 100%;
+      }
+      .btn {
+        flex: 1 1 auto;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -396,7 +434,7 @@
     <!-- HEADER -->
     <header>
       <div class="logo">NGUYỄN ĐỨC MẠNH</div>
-      <nav>
+      <nav aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
@@ -405,23 +443,25 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div>
-        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">Mechanical Designer & Technician</p>
-        <h1 class="hero-title">
+        <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">Mechanical Designer &amp; Technician</p>
+        <h1 id="hero-title" class="hero-title">
           Kết hợp <span>Mechanical Design</span> &amp; <span>Automotive</span>
           cho các sản phẩm thực tế.
         </h1>
         <p class="hero-sub">
           Sinh viên Cơ khí – Ô tô tại HCMUT, có kinh nghiệm thực tế về bảo hành sửa chữa,
-          thiết kế CAD 2D/3D và hỗ trợ thiết kế xe chuyên dùng & trang trại chăn nuôi. Hiện đang
-          học embedded & tiếng Đức để mở rộng góc nhìn đa ngành.:contentReference[oaicite:1]{index=1}
+          thiết kế CAD 2D/3D và tham gia dự án MarsRover 6x6 tại Bosch Automotive Lab.
+          Hiện đang học embedded &amp; tiếng Đức để mở rộng góc nhìn đa ngành và hướng tới
+          trở thành kỹ sư có thể làm việc quốc tế.
         </p>
 
         <div class="hero-tags">
           <span class="tag">CAD: AutoCAD, Inventor, Fusion 360</span>
           <span class="tag">Mechanical Design</span>
-          <span class="tag">Warranty & Technician</span>
+          <span class="tag">Warranty &amp; Technician</span>
+          <span class="tag">Farm &amp; Vehicle Layout Design</span>
           <span class="tag">Project Management basics</span>
         </div>
 
@@ -435,8 +475,8 @@
         </div>
       </div>
 
-      <div class="hero-card">
-        <div class="avatar-circle">
+      <aside class="hero-card" aria-label="Profile summary">
+        <div class="avatar-circle" aria-hidden="true">
           NDM
         </div>
         <div class="avatar-name">Nguyễn Đức Mạnh</div>
@@ -444,19 +484,25 @@
 
         <div class="avatar-meta">
           <span class="pill">Mechanical Designer</span>
-          <span class="pill">Technician & Warranty</span>
-          <span class="pill">Business Support & Farm Design</span>
+          <span class="pill">Technician &amp; Warranty</span>
+          <span class="pill">Business Support &amp; Farm Design</span>
         </div>
 
         <div class="hero-card-footer">
           <span>Open to Mechanical / Automotive internships</span>
-          <div class="socials">
-            <a href="https://github.com/Germieee" title="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/christian-nguyen899" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="mailto:23nd.manh@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+          <div class="socials" aria-label="Social links">
+            <a href="https://github.com/Germieee" title="GitHub" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/christian-nguyen899" title="LinkedIn" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:23nd.manh@gmail.com" title="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
           </div>
         </div>
-      </div>
+      </aside>
     </section>
 
     <!-- ABOUT & SKILLS -->
@@ -467,32 +513,51 @@
           <h3>Giới thiệu</h3>
           <p style="color:var(--muted);margin-top:6px;">
             Mình là sinh viên ngành Automotive Engineering tại HCMC University of Technology (từ 2021),
-            định hướng trở thành Mechanical Designer với nền tảng CAD vững, hiểu quy trình sản xuất và
-            trải nghiệm thực tế về bảo hành, sửa chữa thiết bị điện tử & ô tô.:contentReference[oaicite:2]{index=2}
+            định hướng trở thành Mechanical Designer với nền tảng CAD vững, hiểu quy trình sản xuất,
+            đã từng làm việc tại môi trường phòng lab (Bosch Automotive Lab) và doanh nghiệp (Samco,
+            Big Dutchman, Bravigo, MIHanoi) trong vai trò thiết kế và kỹ thuật bảo hành.
           </p>
         </div>
 
-        <section id="skills" class="card">
+        <section id="skills" class="card" aria-label="Skills">
           <h3>Kỹ năng nổi bật</h3>
           <ul>
-            <li>Computer-Aided Design (CAD): 2D/3D modeling cho chi tiết & cụm.</li>
-            <li>Mechanical Design & Manufacturing Process Management.</li>
-            <li>Project Management, Problem-solving, Strategic & Critical Thinking.</li>
+            <li>Computer-Aided Design (CAD): 2D/3D modeling cho chi tiết &amp; cụm.</li>
+            <li>Mechanical Design &amp; Manufacturing Process Management.</li>
+            <li>Project Management, Problem-solving, Strategic &amp; Critical Thinking.</li>
             <li>Teamwork, giao tiếp với nhiều bộ phận (sales, kỹ thuật, khách hàng).</li>
             <li>Cơ bản Word, Excel phục vụ báo cáo và quản lý dữ liệu.</li>
           </ul>
+
+          <h3 style="margin-top:12px;font-size:13px;">Mindset &amp; Thinking</h3>
+          <ul>
+            <li>System Thinking &amp; Process Optimization.</li>
+            <li>Cross-disciplinary Problem Solving.</li>
+            <li>Product &amp; Platform Thinking.</li>
+            <li>Innovation &amp; Opportunity Recognition.</li>
+            <li>Technical Creativity (Engineering + Software + Simulation).</li>
+            <li>Strategic Analysis &amp; Long-term Planning.</li>
+          </ul>
+
+          <div class="chip-row">
+            <span class="chip">Systems Thinking</span>
+            <span class="chip">Product &amp; Platform Thinking</span>
+            <span class="chip">Innovation &amp; Opportunity</span>
+            <span class="chip">Cross-disciplinary Problem Solving</span>
+          </div>
         </section>
 
         <div class="card">
-          <h3>Ngôn ngữ & điểm mạnh học thuật</h3>
+          <h3>Ngôn ngữ &amp; điểm mạnh học thuật</h3>
           <ul>
             <li>Tiếng Việt – Native.</li>
             <li>Tiếng Anh – IELTS 6.0 (đọc hiểu tài liệu kỹ thuật tốt).</li>
-            <li>Tiếng Đức – A1 (đang học tiếp).</li>
+            <li>Tiếng Đức – Goethe-Zertifikat A1, đang học tiếp lên A2/B1.</li>
           </ul>
           <div class="chip-row">
-            <span class="chip">Kinematics & Dynamics of Machines 7.3</span>
+            <span class="chip">Kinematics &amp; Dynamics of Machines 7.3</span>
             <span class="chip">Mechanical Engineering 8.1</span>
+            <span class="chip">General Mechanical Internship 7.5</span>
             <span class="chip">Mechanical Components 7.3</span>
           </div>
         </div>
@@ -505,12 +570,26 @@
       <div class="card">
         <div class="timeline">
           <div class="timeline-item">
+            <strong>Mechanical Designer – Bosch Automotive Lab (MarsRover Project)</strong><br>
+            <span>Bosch · 2025 – nay</span>
+            <p style="color:var(--muted);margin-top:4px;">
+              Tham gia dự án thiết kế mô hình xe MarsRover 6x6 trong nhóm cơ khí, tập trung vào:
+            </p>
+            <ul>
+              <li>Thiết kế mô hình 3D cho chassis, hệ thống treo rocker–bogie, cụm tay đòn và khung đỡ bằng Inventor/Fusion 360.</li>
+              <li>Phối hợp với nhóm điều khiển để đảm bảo bố trí cơ khí phù hợp sensor, actuator và layout hệ thống truyền động.</li>
+              <li>Tham gia gia công, lắp ráp prototype, đề xuất giải pháp kết cấu để dễ chế tạo và bảo trì.</li>
+              <li>Kiểm soát dung sai thiết kế: lựa chọn kiểu lắp, dung sai ổ lăn – trục – gối đỡ, đảm bảo độ bền và khả năng tháo lắp.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
             <strong>Business Support &amp; Farm Design – Part-time Intern</strong><br>
             <span>BIG DUTCHMAN VIETNAM · 2024 – 2025</span>
             <p style="color:var(--muted);margin-top:4px;">
-              Thiết kế & chỉnh sửa bản vẽ 2D/3D bằng AutoCAD; đảm bảo bản vẽ đúng báo giá;
-              phối hợp team sales & kỹ thuật để phát triển layout trang trại và trang thiết bị
-              đúng nhu cầu khách hàng.:contentReference[oaicite:3]{index=3}
+              Thiết kế &amp; chỉnh sửa bản vẽ 2D/3D bằng AutoCAD; đảm bảo bản vẽ đúng báo giá;
+              phối hợp team sales &amp; kỹ thuật để phát triển layout trang trại và trang thiết bị
+              phù hợp nhu cầu khách hàng.
             </p>
           </div>
 
@@ -518,8 +597,8 @@
             <strong>Special Purpose Vehicle Design Intern – Full-time</strong><br>
             <span>SAMCO · June – August 2023</span>
             <p style="color:var(--muted);margin-top:4px;">
-              Hỗ trợ thiết kế xe chuyên dùng (ambulance, garbage truck, …), dựng & chỉnh sửa bản vẽ
-              2D/3D bằng AutoCAD/Inventor, bố trí thiết bị & nội thất trên chassis, phối hợp kỹ sư
+              Hỗ trợ thiết kế xe chuyên dùng (ambulance, garbage truck, ...), dựng &amp; chỉnh sửa bản vẽ
+              2D/3D bằng AutoCAD/Inventor, bố trí thiết bị &amp; nội thất trên chassis, phối hợp kỹ sư
               senior để đảm bảo tính khả thi và tuân thủ tiêu chuẩn.
             </p>
           </div>
@@ -529,7 +608,7 @@
             <span>BRAVIGO · May – July 2023</span>
             <p style="color:var(--muted);margin-top:4px;">
               Xử lý bảo hành màn hình Android ô tô, hỗ trợ khách hàng đa kênh, chẩn đoán lỗi,
-              tư vấn thông số & cách khắc phục, theo dõi quá trình giải quyết và phối hợp phòng ban liên quan.
+              tư vấn thông số &amp; cách khắc phục, theo dõi quá trình giải quyết và phối hợp phòng ban liên quan.
             </p>
           </div>
 
@@ -537,8 +616,8 @@
             <strong>Technician &amp; Warranty Staff – Part-time</strong><br>
             <span>MIHANOI · Jan – April 2023</span>
             <p style="color:var(--muted);margin-top:4px;">
-              Quản lý luồng hàng bảo hành giữa cửa hàng & kho kỹ thuật, kiểm tra – sửa chữa – cài đặt
-              phần mềm điều khiển cho thiết bị Xiaomi trước khi giao.:contentReference[oaicite:4]{index=4}
+              Quản lý luồng hàng bảo hành giữa cửa hàng &amp; kho kỹ thuật, kiểm tra – sửa chữa – cài đặt
+              phần mềm điều khiển cho thiết bị Xiaomi trước khi giao.
             </p>
           </div>
         </div>
@@ -547,14 +626,14 @@
 
     <!-- EDUCATION & CERT -->
     <section>
-      <div class="section-title"><span></span>Education & Certifications</div>
+      <div class="section-title"><span></span>Education &amp; Certifications</div>
       <div class="section-grid">
         <div class="card">
           <h3>Automotive Engineering – HCMC University of Technology</h3>
           <small>2021 – nay</small>
           <ul>
-            <li>Tập trung vào cơ học máy, chi tiết máy, thực tập cơ khí & động lực ô tô.</li>
-            <li>Song song học thêm CAD/CAE và các khóa online về thiết kế & mô phỏng.</li>
+            <li>Tập trung vào cơ học máy, chi tiết máy, thực tập cơ khí &amp; hệ thống động lực ô tô.</li>
+            <li>Song song học thêm CAD/CAE, thiết kế &amp; mô phỏng trên Inventor, Fusion 360, Simulink.</li>
           </ul>
         </div>
 
@@ -562,10 +641,12 @@
           <h3>Selected Certifications</h3>
           <ul>
             <li>Autodesk Inventor Workshop Series 2024 – HCMUT.</li>
-            <li>Autodesk Certified Professional: Inventor for Mechanical Design (prep).</li>
-            <li>Intro to Mechanical Design & Manufacturing with Fusion 360.</li>
-            <li>CFD Simulation: Centrifugal Pump, Airflow Around a Spoiler.</li>
-            <li>Google – Foundations of Project Management, Data Analytics basics.</li>
+            <li>Autodesk Certified Professional: Inventor for Mechanical Design (Exam Prep).</li>
+            <li>Introduction to Mechanical Engineering Design and Manufacturing with Fusion 360.</li>
+            <li>Generative Design for Additive Manufacturing.</li>
+            <li>CFD Simulation Through a Centrifugal Pump.</li>
+            <li>Computational Fluid Mechanics – Airflow Around a Spoiler.</li>
+            <li>Foundations of Project Management; Introduction to Data Analytics.</li>
           </ul>
         </div>
       </div>
@@ -573,11 +654,11 @@
 
     <!-- VOLUNTEER -->
     <section>
-      <div class="section-title"><span></span>Volunteer & Community</div>
+      <div class="section-title"><span></span>Volunteer &amp; Community</div>
       <div class="card">
         <ul>
-          <li>Volunteer – <strong>100 Days Flying – OISP Volunteer Club (2021–2022)</strong>: xây nhà sinh học, phát quà cho học sinh vùng khó khăn.</li>
-          <li>Volunteer – <strong>Saigon Care (2023–nay)</strong>: hỗ trợ người vô gia cư, các tổ chức bảo vệ trẻ em.</li>
+          <li>Volunteer – <strong>100 Days Flying – OISP Volunteer Club (2021–2022)</strong>: xây nhà sinh học, phát quà cho học sinh vùng khó khăn, tham gia hoạt động gây quỹ.</li>
+          <li>Volunteer – <strong>Saigon Care (2023–nay)</strong>: hỗ trợ người vô gia cư, tặng quà cho các tổ chức bảo vệ trẻ em mỗi tháng.</li>
           <li>Singer – <strong>20somthings – Bee Volunteer Club (2025)</strong>: biểu diễn gây quỹ cho trường vùng cao Đắk Lắk.</li>
           <li>HR/Risk management – <strong>Giai Điệu Trẻ Club (2023–nay)</strong>: tham gia tổ chức sự kiện, hỗ trợ phát triển vocal band.</li>
         </ul>
@@ -592,15 +673,31 @@
           Mình luôn cởi mở với:
           <ul style="margin-top:6px;padding-left:18px;">
             <li>Thực tập / part-time liên quan Mechanical Design, CAD, Automotive.</li>
-            <li>Cơ hội về Farm Design, đặc biệt với Big Dutchman & ngành nông nghiệp công nghệ cao.</li>
+            <li>Cơ hội về Farm Design, đặc biệt với ngành nông nghiệp công nghệ cao.</li>
             <li>Trao đổi về hành trình du học, phát triển sự nghiệp kỹ sư đa ngành.</li>
           </ul>
         </div>
         <div class="contact-list">
-          <p><i class="fa-regular fa-envelope"></i> 23nd.manh@gmail.com</p>
-          <p><i class="fa-solid fa-phone"></i> +84 878 768 988</p>
-          <p><i class="fa-brands fa-linkedin"></i> linkedin.com/in/christian-nguyen899</p>
-          <p><i class="fa-brands fa-github"></i> github.com/Germieee</p>
+          <p>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:23nd.manh@gmail.com">23nd.manh@gmail.com</a>
+          </p>
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+84878768988">+84 878 768 988</a>
+          </p>
+          <p>
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/christian-nguyen899" target="_blank" rel="noreferrer">
+              linkedin.com/in/christian-nguyen899
+            </a>
+          </p>
+          <p>
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/Germieee" target="_blank" rel="noreferrer">
+              github.com/Germieee
+            </a>
+          </p>
         </div>
       </div>
     </section>
